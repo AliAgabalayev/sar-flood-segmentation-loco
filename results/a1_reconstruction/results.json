@@ -1,0 +1,371 @@
+{
+  "selection_sha256": "2f6e00eed38f52232ef61b494b89dca3c51c6328183e716cc650130bc6b2c36f",
+  "individual": [
+    {
+      "event": "Mekong",
+      "seed": 43,
+      "n_chips": 6,
+      "n_valid_chips": 6,
+      "n_all_ignored": 0,
+      "generalist_iou": 0.8443062369357421,
+      "generalist_f1": 0.915581393183955,
+      "loco_iou": 0.8487408673690721,
+      "loco_f1": 0.918182620776819,
+      "delta": 0.0044346304333299225,
+      "checkpoint_sha256": "8520b1bd1ec8e703ff4205b8f74d9b7d5ea291d744cbebd2bd74333e7cf19df2",
+      "run_id": "152b5e4f2d0f424198acc0ee83944584",
+      "evidence_class": "R-strong partial reconstruction",
+      "initialization": "R pipeline reconstruction; init weights not embedded"
+    },
+    {
+      "event": "Mekong",
+      "seed": 44,
+      "n_chips": 6,
+      "n_valid_chips": 6,
+      "n_all_ignored": 0,
+      "generalist_iou": 0.8443062369357421,
+      "generalist_f1": 0.915581393183955,
+      "loco_iou": 0.837704691732956,
+      "loco_f1": 0.9116858606297623,
+      "delta": -0.006601545202786108,
+      "checkpoint_sha256": "acbb3080b6711c9fb3a16fca64f8809dc2ab1da0e41cd84695fd70ede28178de",
+      "run_id": "5b38d52969c241d4aa399c7e9c42a19a",
+      "evidence_class": "R-strong partial reconstruction",
+      "initialization": "R pipeline reconstruction; init weights not embedded"
+    },
+    {
+      "event": "Nigeria",
+      "seed": 43,
+      "n_chips": 4,
+      "n_valid_chips": 4,
+      "n_all_ignored": 0,
+      "generalist_iou": 0.8831477533556673,
+      "generalist_f1": 0.9379484448651954,
+      "loco_iou": 0.8911956242539625,
+      "loco_f1": 0.9424679423161427,
+      "delta": 0.008047870898295173,
+      "checkpoint_sha256": "aadeddd17220b16055875d8789b2e037605aa98a6d34544cafe1cad4fa4877a9",
+      "run_id": "e58513e88c384f2f84d914444d535282",
+      "evidence_class": "R-strong partial reconstruction",
+      "initialization": "R pipeline reconstruction; init weights not embedded"
+    },
+    {
+      "event": "Pakistan",
+      "seed": 43,
+      "n_chips": 6,
+      "n_valid_chips": 6,
+      "n_all_ignored": 0,
+      "generalist_iou": 0.2689768815998596,
+      "generalist_f1": 0.42392715816973375,
+      "loco_iou": 0.23539369901916413,
+      "loco_f1": 0.3810828875135983,
+      "delta": -0.03358318258069548,
+      "checkpoint_sha256": "cc96f5699b4f3d11b146bebd4d0a115936a94c2dcd86d1e5a71deca143e4ce3e",
+      "run_id": "212b10bb2ad746998325368a7ff94bf7",
+      "evidence_class": "R-strong partial reconstruction",
+      "initialization": "R pipeline reconstruction; init weights not embedded"
+    },
+    {
+      "event": "Pakistan",
+      "seed": 44,
+      "n_chips": 6,
+      "n_valid_chips": 6,
+      "n_all_ignored": 0,
+      "generalist_iou": 0.2689768815998596,
+      "generalist_f1": 0.42392715816973375,
+      "loco_iou": 0.2942889612753524,
+      "loco_f1": 0.4547500134519716,
+      "delta": 0.025312079675492816,
+      "checkpoint_sha256": "30c1ac96ce0c6ef9ef5da217ff2328f7dc1dfe169b37fd92a38887d3e570bf2b",
+      "run_id": "345e943304524ba586919abd2a5e658e",
+      "evidence_class": "R-strong partial reconstruction",
+      "initialization": "R pipeline reconstruction; init weights not embedded"
+    },
+    {
+      "event": "Somalia",
+      "seed": 42,
+      "n_chips": 6,
+      "n_valid_chips": 6,
+      "n_all_ignored": 0,
+      "generalist_iou": 0.502690891777689,
+      "generalist_f1": 0.6690542872499929,
+      "loco_iou": 0.5151035547485654,
+      "loco_f1": 0.6799582155743116,
+      "delta": 0.012412662970876398,
+      "checkpoint_sha256": "9b2d20d1501a48453ee0fff0033380a73e044e24ba24f605c03606a5e08da4c0",
+      "run_id": "48584935b7fa44b393e6cf4948efc776",
+      "evidence_class": "R-strong partial reconstruction",
+      "initialization": "R pipeline reconstruction; init weights not embedded"
+    },
+    {
+      "event": "Spain",
+      "seed": 42,
+      "n_chips": 6,
+      "n_valid_chips": 6,
+      "n_all_ignored": 0,
+      "generalist_iou": 0.723701394447487,
+      "generalist_f1": 0.8397062238027153,
+      "loco_iou": 0.721536785043104,
+      "loco_f1": 0.838247304747587,
+      "delta": -0.002164609404383011,
+      "checkpoint_sha256": "3bb1e4b943d8eacefb5a95f47c98199b071f4b6706c2248d69c1a771ea573bc3",
+      "run_id": "d5b7c3b120b64943bdbe79a32949ea64",
+      "evidence_class": "R-strong partial reconstruction",
+      "initialization": "R pipeline reconstruction; init weights not embedded"
+    },
+    {
+      "event": "Sri-Lanka",
+      "seed": 42,
+      "n_chips": 9,
+      "n_valid_chips": 9,
+      "n_all_ignored": 0,
+      "generalist_iou": 0.8352995920209065,
+      "generalist_f1": 0.9102596607686614,
+      "loco_iou": 0.837728016282122,
+      "loco_f1": 0.9116996735751094,
+      "delta": 0.0024284242612154783,
+      "checkpoint_sha256": "da452b478d33e5710f36320bd0cf20f2b2aab90f777eecacd8b2f36bf01bde40",
+      "run_id": "faabe0d17fea446cbb4dd637d5acea66",
+      "evidence_class": "R-strong partial reconstruction",
+      "initialization": "R pipeline reconstruction; init weights not embedded"
+    },
+    {
+      "event": "USA",
+      "seed": 42,
+      "n_chips": 14,
+      "n_valid_chips": 14,
+      "n_all_ignored": 0,
+      "generalist_iou": 0.552506238602553,
+      "generalist_f1": 0.7117604101866628,
+      "loco_iou": 0.5522072018926857,
+      "loco_f1": 0.711512227516212,
+      "delta": -0.00029903670986730635,
+      "checkpoint_sha256": "aa5109b79d40b4d4515177758166115398a2f18a6f3d903cdc9aaa91907cff62",
+      "run_id": "46bcbbc82c68448a95b73ac39feb5725",
+      "evidence_class": "R-strong partial reconstruction",
+      "initialization": "U: completed fine-tune may have loaded attempt-1 pretrain best.ckpt; completed retry pretrain best-v1 is not established as its initialization"
+    }
+  ],
+  "coverage": [
+    {
+      "event": "Ghana",
+      "n_official_test": 11,
+      "available_seeds": [],
+      "n_available": 0,
+      "missing_seeds": [
+        42,
+        43,
+        44
+      ],
+      "status": "missing checkpoint / no usable cached counts"
+    },
+    {
+      "event": "India",
+      "n_official_test": 14,
+      "available_seeds": [],
+      "n_available": 0,
+      "missing_seeds": [
+        42,
+        43,
+        44
+      ],
+      "status": "missing checkpoint / no usable cached counts"
+    },
+    {
+      "event": "Mekong",
+      "n_official_test": 6,
+      "available_seeds": [
+        43,
+        44
+      ],
+      "n_available": 2,
+      "missing_seeds": [
+        42
+      ],
+      "status": "partial reconstruction"
+    },
+    {
+      "event": "Nigeria",
+      "n_official_test": 4,
+      "available_seeds": [
+        43
+      ],
+      "n_available": 1,
+      "missing_seeds": [
+        42,
+        44
+      ],
+      "status": "partial reconstruction"
+    },
+    {
+      "event": "Pakistan",
+      "n_official_test": 6,
+      "available_seeds": [
+        43,
+        44
+      ],
+      "n_available": 2,
+      "missing_seeds": [
+        42
+      ],
+      "status": "partial reconstruction"
+    },
+    {
+      "event": "Paraguay",
+      "n_official_test": 14,
+      "available_seeds": [],
+      "n_available": 0,
+      "missing_seeds": [
+        42,
+        43,
+        44
+      ],
+      "status": "missing checkpoint / no usable cached counts"
+    },
+    {
+      "event": "Somalia",
+      "n_official_test": 6,
+      "available_seeds": [
+        42
+      ],
+      "n_available": 1,
+      "missing_seeds": [
+        43,
+        44
+      ],
+      "status": "partial reconstruction"
+    },
+    {
+      "event": "Spain",
+      "n_official_test": 6,
+      "available_seeds": [
+        42
+      ],
+      "n_available": 1,
+      "missing_seeds": [
+        43,
+        44
+      ],
+      "status": "partial reconstruction"
+    },
+    {
+      "event": "Sri-Lanka",
+      "n_official_test": 9,
+      "available_seeds": [
+        42
+      ],
+      "n_available": 1,
+      "missing_seeds": [
+        43,
+        44
+      ],
+      "status": "partial reconstruction"
+    },
+    {
+      "event": "USA",
+      "n_official_test": 14,
+      "available_seeds": [
+        42
+      ],
+      "n_available": 1,
+      "missing_seeds": [
+        43,
+        44
+      ],
+      "status": "partial reconstruction"
+    }
+  ],
+  "generalist": {
+    "Ghana": {
+      "tp": 108205,
+      "fp": 15505,
+      "fn": 63064,
+      "tn": 1947083,
+      "valid_pixels": 2133857,
+      "iou": 0.5793365243556383,
+      "f1": 0.7336454459469997
+    },
+    "India": {
+      "tp": 522954,
+      "fp": 99241,
+      "fn": 163553,
+      "tn": 2438420,
+      "valid_pixels": 3224168,
+      "iou": 0.6655492600681134,
+      "f1": 0.7991949274930428
+    },
+    "Mekong": {
+      "tp": 196709,
+      "fp": 22674,
+      "fn": 13600,
+      "tn": 1220237,
+      "valid_pixels": 1453220,
+      "iou": 0.8443062369357421,
+      "f1": 0.915581393183955
+    },
+    "Nigeria": {
+      "tp": 118892,
+      "fp": 12355,
+      "fn": 3376,
+      "tn": 602852,
+      "valid_pixels": 737475,
+      "iou": 0.8831477533556673,
+      "f1": 0.9379484448651954
+    },
+    "Pakistan": {
+      "tp": 55172,
+      "fp": 6221,
+      "fn": 143725,
+      "tn": 902806,
+      "valid_pixels": 1107924,
+      "iou": 0.2689768815998596,
+      "f1": 0.42392715816973375
+    },
+    "Paraguay": {
+      "tp": 161079,
+      "fp": 51468,
+      "fn": 30011,
+      "tn": 3012860,
+      "valid_pixels": 3255418,
+      "iou": 0.6640844663956662,
+      "f1": 0.7981379308636225
+    },
+    "Somalia": {
+      "tp": 59126,
+      "fp": 30955,
+      "fn": 27538,
+      "tn": 1209059,
+      "valid_pixels": 1326678,
+      "iou": 0.502690891777689,
+      "f1": 0.6690542872499929
+    },
+    "Spain": {
+      "tp": 309213,
+      "fp": 74899,
+      "fn": 43154,
+      "tn": 1054447,
+      "valid_pixels": 1481713,
+      "iou": 0.723701394447487,
+      "f1": 0.8397062238027153
+    },
+    "Sri-Lanka": {
+      "tp": 355430,
+      "fp": 45285,
+      "fn": 24797,
+      "tn": 1628472,
+      "valid_pixels": 2053984,
+      "iou": 0.8352995920209065,
+      "f1": 0.9102596607686614
+    },
+    "USA": {
+      "tp": 92105,
+      "fp": 51294,
+      "fn": 23305,
+      "tn": 3502818,
+      "valid_pixels": 3669522,
+      "iou": 0.552506238602553,
+      "f1": 0.7117604101866628
+    }
+  },
+  "no_overall_ten_event_mean": "Missing events retained explicitly; no complete-experiment mean computed."
+}

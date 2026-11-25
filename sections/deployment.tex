@@ -1,0 +1,140 @@
+\section{Deployment in Azerbaijan}
+\label{sec:deployment}
+
+Azerbaijan has no coverage in Sen1Floods11, which motivated a local
+mapping prototype. This section describes the prototype, which uses a
+different segmentation model and has different evidence from the
+event-held-out study.
+
+\subsection{Production Model}
+
+The prototype uses SegFormer-B4 \cite{xie2021segformer} with the
+\texttt{nvidia/mit-b4} backbone and ImageNet initialization. It follows
+the two-stage training scheme of Sec.~\ref{sec:training}. The logged best
+weak-pretraining validation IoU was 0.658. On the hand split the selected
+checkpoint reached a validation IoU of 0.7024, test IoU of 0.7027 and
+test F1 of 0.8254. Checkpoints within each run were selected by
+validation IoU. The historical choice of the default deployment
+variant also used test IoU. The
+\href{https://github.com/AliAgabalayev/Flood-Damage-Detection/commit/5e727aaed7b5995c6edeec33e90c4e8a87718c8f}{configuration history}
+records that two B4 variants had higher validation scores, but the
+default B4 beat both variants and the DeepLabV3+ generalist on test
+IoU. Table~\ref{tab:model-comparison} records those benchmark runs for
+the default and the same generalist as in Table~\ref{tab:two-stage}.
+The test contrast is descriptive after model selection. It provides
+no accuracy estimate for the Azerbaijan scenes.
+
+\begin{table}[!htbp]
+\caption{Logged results for two seed-42 runs on the standard
+Sen1Floods11 hand split. These are raw water segmentation scores.}
+\label{tab:model-comparison}
+\centering\small
+\input{sections/tables/model_comparison}
+\end{table}
+
+\subsection{Viewer and API}
+\label{sec:api}
+
+The web viewer covers five fixed sites with precomputed assets. It
+offers layers for the map mask, recurrent water, model probabilities
+and raw SAR, and exports PNG or GeoTIFF where available. A separate
+upload page sends a GeoTIFF to the FastAPI \texttt{POST /predict}
+endpoint. The model loads once at startup. Inference uses $512\times512$
+tiles, 64-pixel overlap, feathered probability stitching and a threshold
+of $\geq0.5$.
+
+The revised upload path accepts north-up WGS~84 GeoTIFFs with at least
+two bands. It aligns configured JRC and DEM data to the upload grid
+and uses the nominal look geometry in Sec.~\ref{sec:fusion}. It
+reports partial coverage and rejects requests with no jointly usable
+reference coverage. On accepted uploads, missing DEM pixels and
+their one-pixel boundary are excluded, while missing JRC values
+cause no JRC subtraction. Area, scene percentage and the PNG overlay
+come from the same final mask. The percentage uses the full raster as
+its denominator.
+
+On 25 November 2026, we sent the original Baku and Sabirabad
+GeoTIFFs to a local server with the corrected terrain rule. Each returned HTTP 200 with partial
+reference coverage. We decoded the overlay's alpha mask and compared
+it pixel by pixel with a fresh offline CLI GeoTIFF using the same
+checkpoint, inference settings and reference tiles
+(Table~\ref{tab:api-replay}). Both overlays exactly matched the offline
+masks. We checked the response bounds and recomputed the map statistics
+from the decoded overlays. The final mapped areas were approximately
+3.15~km$^2$ in Baku and 2.04~km$^2$ in Sabirabad.
+
+\begin{table}[!htbp]
+\caption{Corrected HTTP and CLI replay on the same raster grid.
+HTTP and CLI water columns count positive pixels. The last two columns
+count flips relative to the previous implementation, for terrain
+exclusions and final water separately.}
+\label{tab:api-replay}
+\centering\small
+\input{sections/tables/api_replay}
+\end{table}
+
+\subsection{Scene Provenance}
+
+The project records Baku on 7 April 2026 and Sabirabad on 30 June 2026
+as Sentinel-1 GRD IW acquisitions with VV and VH, retrieved using
+Google Earth Engine \cite{gorelick2017}. The archived rasters lack
+original Sentinel product IDs and overpass times. The Baku City
+Executive Power reported heavy rainfall and suburban flooding on
+6 April \cite{baku2026}. This provides context for the acquisition.
+The records examined for Sabirabad did not confirm a matching event.
+
+\subsection{Reference Labels}
+
+We found no independently labeled inundation extent aligned in time
+and grid to either acquisition. Earlier before/after Baku masks were
+on a different grid and lacked reliable acquisition and labeling
+provenance. The municipal report concerns impacts at city scale and
+does not delineate inundation on the radar grid. Both scenes are
+treated as unlabeled mapping examples.
+
+\subsection{Effect of Post-Processing}
+\label{sec:map-effects}
+
+Table~\ref{tab:deployment} shows the historical offline products and
+the CPU replay with the archived exclusion masks. Each replay differs
+from the corresponding archived final by one positive pixel. On these
+scene grids the approximately mapped area changes from 73.08 to
+3.15~km$^2$ in Baku and 8.94 to 2.04~km$^2$ in Sabirabad. The removed
+fraction of raw positives is 95.7\% and 77.2\%, respectively. It measures
+the effect of the filters on the prediction.
+
+\begin{table}[!htbp]
+\caption{Historical offline map products and replay using the archived
+terrain rule. All values are positive pixel counts. The corrected replay
+is reported separately in Table~\ref{tab:api-replay}.}
+\label{tab:deployment}
+\centering\small
+\input{sections/tables/historical_scene_counts}
+\end{table}
+
+The archived terrain masks use the earlier sign convention, which
+reversed the terrain projection in Eq.~(\ref{eq:local-incidence}).
+SRTM1 at the nominal geometry reproduces those historical masks.
+Dilated DEM gaps account for 1,240,996 of 1,241,953 archived flags in
+Baku and all 1,826,806 in Sabirabad. A zero in the archived final
+mask may indicate an exclusion or a negative prediction.
+
+The corrected rule leaves these gap counts and the JRC masks
+unchanged. In Baku it adds 47 and removes 845 terrain exclusions
+outside the gaps, changing 892 terrain pixels. Only two final pixels
+change relative to the prior inference on the same inputs, both
+returning to the water mask. In Sabirabad, both masks are unchanged.
+Relative to the archived final products, the corrected water maps
+differ at three pixels in Baku and one in Sabirabad.
+
+
+\subsection{Limitations}
+
+Each Sen1Floods11 group represents a particular flood event and scene
+context. The study measures transfer on the surviving models and
+observed chips. The prototype uses a single nominal incidence angle
+and local reference coverage, which strongly affects the resulting
+map. The two unlabeled scenes leave false alarms, missed water and
+the accuracy effect of filtering unmeasured. The reference tiles and
+checkpoint used in local replay are listed in the reproducibility
+package.

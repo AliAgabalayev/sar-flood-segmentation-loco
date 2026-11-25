@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "Please cite the manuscript when using this repository."
+title: "Sen1Floods11 Event Transfer Audit and Reproduction Package"
+type: dataset
+version: "1.0"
+date-released: 2026-11-25
+repository-code: "https://github.com/AliAgabalayev/flood-paper/tree/paper-v1.0"
+authors: &authors
+  - given-names: Ali
+    family-names: Agabalazade
+    affiliation: Azerbaijan State University of Economics
+  - given-names: Nigar
+    family-names: Rustamova
+    affiliation: Azerbaijan State University of Economics
+  - given-names: Jala
+    family-names: Suleymanova
+    affiliation: Azerbaijan Technical University
+  - given-names: Isgandar
+    family-names: Panahov
+    affiliation: Azerbaijan State University of Economics
+preferred-citation:
+  type: unpublished
+  title: "Interpolation vs. Generalization in SAR Water Segmentation: An Event-Held-Out Study on Sen1Floods11 with an Azerbaijan Mapping Prototype"
+  authors: *authors
+  year: 2026

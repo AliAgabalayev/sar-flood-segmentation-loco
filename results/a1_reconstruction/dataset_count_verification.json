@@ -1,0 +1,25 @@
+{
+  "manifest_counts": {
+    "train": 252,
+    "val": 89,
+    "test": 90,
+    "bolivia_holdout": 15
+  },
+  "unique_union": 446,
+  "rows_total": 446,
+  "label_files": 446,
+  "all_event_prefixes": [
+    "Bolivia",
+    "Ghana",
+    "India",
+    "Mekong",
+    "Nigeria",
+    "Pakistan",
+    "Paraguay",
+    "Somalia",
+    "Spain",
+    "Sri-Lanka",
+    "USA"
+  ],
+  "note": "446 = 431 official + 15 Bolivia; ten official event groups plus separate Bolivia. Hand LOCO trains on nine other official groups; weak pool includes eleven groups, so weak9 retains ten other groups."
+}

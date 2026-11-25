@@ -1,0 +1,74 @@
+\section{Dataset and LOCO Protocol}
+\label{sec:dataset}
+
+\subsection{Sen1Floods11}
+
+We use Sen1Floods11 \cite{bonafilia2020}, which provides $512\times512$
+Sentinel-1 chips with labels from two sources. The hand-labeled subset
+covers 11 flood events named by country or region, including the Mekong.
+It contains 446 chips. Of these, 431 are in the standard split and 15
+Bolivia chips are held out separately by design. The paired comparison
+uses the ten standard groups and leaves out the separate Bolivia hand
+holdout. The standard split has 252 training, 89 validation and 90 test
+chips. The training share is 58.47\% of 431.
+
+A much larger weakly labeled subset has labels derived automatically from
+Sentinel-2 imagery. Bonafilia et al. report 4,385 weakly labeled chips.
+The local manifests contain 4,384, with 3,946 train and 438 validation
+entries across 12 filename groups, including Bolivia and Colombia. The
+reason for the one-chip difference is unknown.
+
+Water makes up 9.51\% of labeled pixels with finite SAR in the official
+hand training split and 12.30\% in the official test split. The historical
+10.6\% figure describes the full hand inventory. The labels mark water
+present on the flood date, including both flood and persistent water.
+This determines which model output can be scored (Sec.~\ref{sec:fusion}).
+
+\subsection{Leave-One-Event-Out Protocol}
+\label{sec:protocol}
+
+For each planned fold, the reconstructed manifests remove the named
+event from the hand and weak training and validation roles. Hand training
+then uses 211--242 chips and hand validation uses 75--85. Three planned
+seeds (42, 43 and 44) for the ten standard groups give 30 event--seed
+combinations. The surviving runs cover only part of this design
+(Sec.~\ref{sec:loco}).
+
+The October reconstruction froze completed runs and their
+checkpoints with the best validation IoU before paired inference. Committed
+manifests, file hashes, run paths and validation histories support the
+reconstruction of historical membership and checkpoint selection.
+Runtime records of actual file reads and full initializer lineage were
+unavailable, including the USA retry's exact pretraining initializer.
+
+\subsection{Seed-Specific Paired Difference}
+\label{sec:paired}
+
+The original comparison scored the generalist across all 431 standard
+hand chips, including the 252 used for hand training and 89 used for
+validation. This mixed training, checkpoint-selection and test performance.
+We now compare an event-excluded checkpoint for seed $s$ with a fixed
+generalist of the same architecture and define
+\begin{equation}
+\Delta(e,s)=\operatorname{IoU}(\mathrm{LOCO}_{e,s},T_e)
+             -\operatorname{IoU}(G_{42},T_e).
+\label{eq:paired}
+\end{equation}
+Here $T_e$ contains only event $e$'s official test chips and $G_{42}$ is
+the same seed-42 generalist checkpoint throughout. We use the same valid
+mask in both arms, excluding ignored labels and non-finite SAR, and score
+sigmoid probabilities strictly greater than 0.5 without test-time
+augmentation or fusion. For each arm, water-class IoU is
+$TP/(TP+FP+FN)$, using confusion counts pooled over the valid pixels in
+$T_e$. A negative difference means the event-excluded checkpoint scored
+lower on these inputs.
+
+Identical test inputs control what is scored. Training budget,
+initialization and validation composition still differ. The historical
+Bolivia difference of $+0.141$ compared two models whose hand training
+excluded Bolivia. It did not measure the effect of changing the
+training budget. A later
+size-matching pilot covered four events with one seed and one replacement
+draw each. It provides descriptive results for the particular datasets
+used. The accompanying reproduction package records the individual
+runs and their design limits.

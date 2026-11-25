@@ -1,0 +1,111 @@
+{
+  "ml_commit": "c1b1b7fb54dc67380a7352f25c29118527acc788",
+  "checkpoint_sha256": "96d634b95a7ac53a77dba4f5ccc4f1ebbec7779a4103cd6b26bd7544d5c956f6",
+  "config_sha256": "347f1c5ced282c6f482f2072b914d7cf0273ddb99f0216516b9df9309503fae5",
+  "reference_hashes": {
+    "occurrence_40E_50Nv1_4_2021.tif": "d35e7bcc538f98a324eb1ec080a83e7807378193fb49de87a71f0f2f9777c42b",
+    "SRTM1_N40E049.tif": "f5a21fc2cc5580ad918614038bd702e91e36857a4306013e8c4288cf054b52d4",
+    "SRTM1_N40E048.tif": "88438e3bdde0bfab52a71977ae1a3e209a8e452b174b5e27684b17c32fe0da6d"
+  },
+  "runtime": {
+    "python": "3.13.18",
+    "threads": 4,
+    "device": "cpu",
+    "torch": "2.12.0",
+    "transformers": "5.5.3",
+    "rasterio": "1.5.0",
+    "fastapi": "0.135.2",
+    "uvicorn": "0.42.0",
+    "gdal": "3.12.1"
+  },
+  "scenes": [
+    {
+      "site": "baku",
+      "scene_sha256": "2f8f9bd98653236f1f5599c649884a52981c8c305a44c91a2b38f30c42ad6cfe",
+      "http_status": 200,
+      "api_positive_pixels": 41319,
+      "api_flooded_pct": 0.67,
+      "api_flooded_area_km2": 3.15,
+      "fusion": {
+        "status": "partial_coverage",
+        "raster_pixels": 6202752,
+        "jrc_covered_pixels": 4959528,
+        "dem_covered_pixels": 4963984,
+        "joint_covered_pixels": 4959528,
+        "dem_gap_excluded_pixels": 1240996,
+        "geometry": {
+          "source": "configured_nominal",
+          "orbit_pass": "ASCENDING",
+          "incidence_deg": 37.55
+        }
+      },
+      "api_mask_sha256": "f53b18c01f58cdd4a773418af0a33884fd57c052564b22f9c4dc6b2cf9f27ec5",
+      "offline_mask_sha256": "f53b18c01f58cdd4a773418af0a33884fd57c052564b22f9c4dc6b2cf9f27ec5",
+      "offline_raw_positive_pixels": 960106,
+      "offline_after_jrc_positive_pixels": 165158,
+      "offline_positive_pixels": 41319,
+      "api_vs_offline_differing_pixels": 0,
+      "current_offline_vs_archived": {
+        "flood_mask.tif": {
+          "archived_positive_pixels": 41320,
+          "current_positive_pixels": 41319,
+          "different_pixels": 1
+        },
+        "permanent_water.tif": {
+          "archived_positive_pixels": 902191,
+          "current_positive_pixels": 902191,
+          "different_pixels": 0
+        },
+        "layover_shadow.tif": {
+          "archived_positive_pixels": 1241953,
+          "current_positive_pixels": 1241953,
+          "different_pixels": 0
+        }
+      }
+    },
+    {
+      "site": "sabirabad",
+      "scene_sha256": "5544878f2389109714d1b9cf97d601915d67ddc242036951ab16d109eaacc165",
+      "http_status": 200,
+      "api_positive_pixels": 26668,
+      "api_flooded_pct": 0.46,
+      "api_flooded_area_km2": 2.04,
+      "fusion": {
+        "status": "partial_coverage",
+        "raster_pixels": 5806168,
+        "jrc_covered_pixels": 3976756,
+        "dem_covered_pixels": 3981968,
+        "joint_covered_pixels": 3976756,
+        "dem_gap_excluded_pixels": 1826806,
+        "geometry": {
+          "source": "configured_nominal",
+          "orbit_pass": "ASCENDING",
+          "incidence_deg": 37.55
+        }
+      },
+      "api_mask_sha256": "090fbe18a369508e05addede53d0549b1a609d2d59abc39035d15386f8c0d141",
+      "offline_mask_sha256": "090fbe18a369508e05addede53d0549b1a609d2d59abc39035d15386f8c0d141",
+      "offline_raw_positive_pixels": 116713,
+      "offline_after_jrc_positive_pixels": 44785,
+      "offline_positive_pixels": 26668,
+      "api_vs_offline_differing_pixels": 0,
+      "current_offline_vs_archived": {
+        "flood_mask.tif": {
+          "archived_positive_pixels": 26669,
+          "current_positive_pixels": 26668,
+          "different_pixels": 1
+        },
+        "permanent_water.tif": {
+          "archived_positive_pixels": 98108,
+          "current_positive_pixels": 98108,
+          "different_pixels": 0
+        },
+        "layover_shadow.tif": {
+          "archived_positive_pixels": 1826806,
+          "current_positive_pixels": 1826806,
+          "different_pixels": 0
+        }
+      }
+    }
+  ]
+}

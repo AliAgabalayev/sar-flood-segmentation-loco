@@ -1,0 +1,31 @@
+{
+  "source_sha256": {
+    "scripts/reconstruct_a1.py": "49813a13908c09a4d3c2fd0b0b2e40c1e8ec77c4ef25171962e2c11f0992ec77",
+    "scripts/export_a1_reconstruction.py": "fda253a8b7766d468496ead5c527a5de5ff54925d3b241e6b24e0f2128bcf332",
+    "src/inference/evaluate.py": "d354b38b79400afefe27e95d7e374666f9a6ee8b76d8dd26981a827feb7774bf",
+    "src/data/dataset.py": "d9f425dfa2482da6ff9337849e0901d7472713b960804720ebca2a4edfe3bb27",
+    "src/data/preprocessing.py": "e5ca07150759889c1bb6016f71108b19c0d72c11d91325cdf00dc58ec1aa9ffc",
+    "tests/test_a1_reconstruction.py": "00faf8102e5424b29ba840fac21c4a54b0453936c27a7f9574dd50151582ac04",
+    "config/experiments/weak_finetune.yaml": "87f9dc97dcf0b3cb8f04dacbf56a32579ace7c4abd3a3515a6e5fc3b5ece788d",
+    "docs/checkpoint_provenance.md": "c94a32a9305f17585010da20c8226ecfeaa58f67ac49e2b9e9e8b5e0cccfa1fd",
+    "data/reference/checkpoint_sha256.txt": "d066c8e76240d247f6a9c444197364e6f8dcd1f2de25b086ae9b49e33d5ab77f"
+  },
+  "python": "3.13.13",
+  "torch": "2.12.1+cu130",
+  "numpy": "2.5.0",
+  "rasterio": "1.5.0",
+  "torchmetrics": "1.9.0",
+  "lightning": "2.6.5",
+  "cuda": "13.0",
+  "device": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "commit": "867a4f3e3dae9a935578e401f5c5f970e3d0adac",
+  "selection_sha256": "2f6e00eed38f52232ef61b494b89dca3c51c6328183e716cc650130bc6b2c36f",
+  "commands": [
+    ".venv/bin/python scripts/reconstruct_a1.py freeze",
+    ".venv/bin/python scripts/reconstruct_a1.py run --smoke",
+    ".venv/bin/python scripts/reconstruct_a1.py run",
+    ".venv/bin/python -m unittest discover -s tests -p 'test_a1*.py'",
+    ".venv/bin/python scripts/export_a1_reconstruction.py",
+    "(in manuscript folder) latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build main.tex"
+  ]
+}

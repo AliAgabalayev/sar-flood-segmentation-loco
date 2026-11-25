@@ -1,0 +1,338 @@
+[
+  {
+    "path": "models/best.ckpt",
+    "expected_sha256": "c828e6e8ba0fc2c14522685079b81db04e4cf18bcb09db1ca5a78f33069eb29c",
+    "observed_sha256": "c828e6e8ba0fc2c14522685079b81db04e4cf18bcb09db1ca5a78f33069eb29c",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/last.ckpt",
+    "expected_sha256": "e840f2c6d9b0d24d58a63aae61807ebbc142f947281af32bca68276fa4c4744d",
+    "observed_sha256": "e840f2c6d9b0d24d58a63aae61807ebbc142f947281af32bca68276fa4c4744d",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/weak_pretrain_finetune/finetune/best.ckpt",
+    "expected_sha256": "c828e6e8ba0fc2c14522685079b81db04e4cf18bcb09db1ca5a78f33069eb29c",
+    "observed_sha256": "c828e6e8ba0fc2c14522685079b81db04e4cf18bcb09db1ca5a78f33069eb29c",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/weak_pretrain_finetune/pretrain/best.ckpt",
+    "expected_sha256": "8cb97f7949878e28591a24ceed06848524faf3e6c822e4dce824de0b4a300103",
+    "observed_sha256": "8cb97f7949878e28591a24ceed06848524faf3e6c822e4dce824de0b4a300103",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/weak_pretrain_finetune/single_stage_baseline/best.ckpt",
+    "expected_sha256": "e26ba025dd4db0b2f7ccf576a7d695ad7cc23ff39aaec3bed5b4b83b28edd3e0",
+    "observed_sha256": "e26ba025dd4db0b2f7ccf576a7d695ad7cc23ff39aaec3bed5b4b83b28edd3e0",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/weak_pretrain_finetune/finetune/last.ckpt",
+    "expected_sha256": "c828e6e8ba0fc2c14522685079b81db04e4cf18bcb09db1ca5a78f33069eb29c",
+    "observed_sha256": "c828e6e8ba0fc2c14522685079b81db04e4cf18bcb09db1ca5a78f33069eb29c",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/weak_pretrain_finetune/pretrain/last.ckpt",
+    "expected_sha256": "8cb97f7949878e28591a24ceed06848524faf3e6c822e4dce824de0b4a300103",
+    "observed_sha256": "8cb97f7949878e28591a24ceed06848524faf3e6c822e4dce824de0b4a300103",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/weak_pretrain_finetune/single_stage_baseline/last.ckpt",
+    "expected_sha256": "e26ba025dd4db0b2f7ccf576a7d695ad7cc23ff39aaec3bed5b4b83b28edd3e0",
+    "observed_sha256": "e26ba025dd4db0b2f7ccf576a7d695ad7cc23ff39aaec3bed5b4b83b28edd3e0",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/Mekong/finetune_seed43/best.ckpt",
+    "expected_sha256": "8520b1bd1ec8e703ff4205b8f74d9b7d5ea291d744cbebd2bd74333e7cf19df2",
+    "observed_sha256": "8520b1bd1ec8e703ff4205b8f74d9b7d5ea291d744cbebd2bd74333e7cf19df2",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/Mekong/finetune_seed43/last.ckpt",
+    "expected_sha256": "8520b1bd1ec8e703ff4205b8f74d9b7d5ea291d744cbebd2bd74333e7cf19df2",
+    "observed_sha256": "8520b1bd1ec8e703ff4205b8f74d9b7d5ea291d744cbebd2bd74333e7cf19df2",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/Mekong/finetune_seed44/best.ckpt",
+    "expected_sha256": "acbb3080b6711c9fb3a16fca64f8809dc2ab1da0e41cd84695fd70ede28178de",
+    "observed_sha256": "acbb3080b6711c9fb3a16fca64f8809dc2ab1da0e41cd84695fd70ede28178de",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/Mekong/finetune_seed44/last.ckpt",
+    "expected_sha256": "acbb3080b6711c9fb3a16fca64f8809dc2ab1da0e41cd84695fd70ede28178de",
+    "observed_sha256": "acbb3080b6711c9fb3a16fca64f8809dc2ab1da0e41cd84695fd70ede28178de",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/Mekong/pretrain_seed43/best.ckpt",
+    "expected_sha256": "b4cf9ea33482dc396def999c1a7b9e70c3e1d0678e98cfb80f7e085d39b8c893",
+    "observed_sha256": "b4cf9ea33482dc396def999c1a7b9e70c3e1d0678e98cfb80f7e085d39b8c893",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/Mekong/pretrain_seed43/last.ckpt",
+    "expected_sha256": "b4cf9ea33482dc396def999c1a7b9e70c3e1d0678e98cfb80f7e085d39b8c893",
+    "observed_sha256": "b4cf9ea33482dc396def999c1a7b9e70c3e1d0678e98cfb80f7e085d39b8c893",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/Mekong/pretrain_seed44/best.ckpt",
+    "expected_sha256": "1574beda9e5aa36249b9cbf8c60460b97c945a7ecb235aa2580daf7b1f7f6e5d",
+    "observed_sha256": "1574beda9e5aa36249b9cbf8c60460b97c945a7ecb235aa2580daf7b1f7f6e5d",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/Mekong/pretrain_seed44/last.ckpt",
+    "expected_sha256": "1574beda9e5aa36249b9cbf8c60460b97c945a7ecb235aa2580daf7b1f7f6e5d",
+    "observed_sha256": "1574beda9e5aa36249b9cbf8c60460b97c945a7ecb235aa2580daf7b1f7f6e5d",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/Pakistan/finetune_seed43/best.ckpt",
+    "expected_sha256": "cc96f5699b4f3d11b146bebd4d0a115936a94c2dcd86d1e5a71deca143e4ce3e",
+    "observed_sha256": "cc96f5699b4f3d11b146bebd4d0a115936a94c2dcd86d1e5a71deca143e4ce3e",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/Pakistan/finetune_seed43/last.ckpt",
+    "expected_sha256": "cc96f5699b4f3d11b146bebd4d0a115936a94c2dcd86d1e5a71deca143e4ce3e",
+    "observed_sha256": "cc96f5699b4f3d11b146bebd4d0a115936a94c2dcd86d1e5a71deca143e4ce3e",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/Pakistan/finetune_seed44/best.ckpt",
+    "expected_sha256": "30c1ac96ce0c6ef9ef5da217ff2328f7dc1dfe169b37fd92a38887d3e570bf2b",
+    "observed_sha256": "30c1ac96ce0c6ef9ef5da217ff2328f7dc1dfe169b37fd92a38887d3e570bf2b",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/Pakistan/finetune_seed44/last.ckpt",
+    "expected_sha256": "30c1ac96ce0c6ef9ef5da217ff2328f7dc1dfe169b37fd92a38887d3e570bf2b",
+    "observed_sha256": "30c1ac96ce0c6ef9ef5da217ff2328f7dc1dfe169b37fd92a38887d3e570bf2b",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/Pakistan/pretrain_seed43/best.ckpt",
+    "expected_sha256": "8fa271b3ee1c46c7ae95167a2a3c74483dbecfb13a477aabf9c7a691ead86cf1",
+    "observed_sha256": "8fa271b3ee1c46c7ae95167a2a3c74483dbecfb13a477aabf9c7a691ead86cf1",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/Pakistan/pretrain_seed43/last.ckpt",
+    "expected_sha256": "8fa271b3ee1c46c7ae95167a2a3c74483dbecfb13a477aabf9c7a691ead86cf1",
+    "observed_sha256": "8fa271b3ee1c46c7ae95167a2a3c74483dbecfb13a477aabf9c7a691ead86cf1",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/Pakistan/pretrain_seed44/best.ckpt",
+    "expected_sha256": "1494bf5dd4e1e07598fe6d5eaf502d2295cb49d620bd924f2c3666fe8ae8f517",
+    "observed_sha256": "1494bf5dd4e1e07598fe6d5eaf502d2295cb49d620bd924f2c3666fe8ae8f517",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/Pakistan/pretrain_seed44/last.ckpt",
+    "expected_sha256": "1494bf5dd4e1e07598fe6d5eaf502d2295cb49d620bd924f2c3666fe8ae8f517",
+    "observed_sha256": "1494bf5dd4e1e07598fe6d5eaf502d2295cb49d620bd924f2c3666fe8ae8f517",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/Somalia/finetune/best.ckpt",
+    "expected_sha256": "9b2d20d1501a48453ee0fff0033380a73e044e24ba24f605c03606a5e08da4c0",
+    "observed_sha256": "9b2d20d1501a48453ee0fff0033380a73e044e24ba24f605c03606a5e08da4c0",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/Somalia/finetune/last.ckpt",
+    "expected_sha256": "9b2d20d1501a48453ee0fff0033380a73e044e24ba24f605c03606a5e08da4c0",
+    "observed_sha256": "9b2d20d1501a48453ee0fff0033380a73e044e24ba24f605c03606a5e08da4c0",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/Somalia/pretrain/best.ckpt",
+    "expected_sha256": "fd8687c8b70b1002ac665bca7926235a1d143e73025af47f78eac5b06b598185",
+    "observed_sha256": "fd8687c8b70b1002ac665bca7926235a1d143e73025af47f78eac5b06b598185",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/Somalia/pretrain/last.ckpt",
+    "expected_sha256": "94e17d1b8f1d659b850167fb0c3b958c45749f0af7bf604d45832e4290ebe95f",
+    "observed_sha256": "94e17d1b8f1d659b850167fb0c3b958c45749f0af7bf604d45832e4290ebe95f",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/Spain/finetune/best.ckpt",
+    "expected_sha256": "3bb1e4b943d8eacefb5a95f47c98199b071f4b6706c2248d69c1a771ea573bc3",
+    "observed_sha256": "3bb1e4b943d8eacefb5a95f47c98199b071f4b6706c2248d69c1a771ea573bc3",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/Spain/finetune/last.ckpt",
+    "expected_sha256": "3bb1e4b943d8eacefb5a95f47c98199b071f4b6706c2248d69c1a771ea573bc3",
+    "observed_sha256": "3bb1e4b943d8eacefb5a95f47c98199b071f4b6706c2248d69c1a771ea573bc3",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/Spain/pretrain/best.ckpt",
+    "expected_sha256": "ad9da4768e957b3db400a2ea2ba44f854cc675ce7081c426abb5636905547bb8",
+    "observed_sha256": "ad9da4768e957b3db400a2ea2ba44f854cc675ce7081c426abb5636905547bb8",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/Spain/pretrain/last.ckpt",
+    "expected_sha256": "4c3f8b856a901272a7edcad9311b108546b482f36cfae42b6b1b1ca924d49f1f",
+    "observed_sha256": "4c3f8b856a901272a7edcad9311b108546b482f36cfae42b6b1b1ca924d49f1f",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/Sri-Lanka/finetune/best.ckpt",
+    "expected_sha256": "da452b478d33e5710f36320bd0cf20f2b2aab90f777eecacd8b2f36bf01bde40",
+    "observed_sha256": "da452b478d33e5710f36320bd0cf20f2b2aab90f777eecacd8b2f36bf01bde40",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/Sri-Lanka/finetune/last.ckpt",
+    "expected_sha256": "da452b478d33e5710f36320bd0cf20f2b2aab90f777eecacd8b2f36bf01bde40",
+    "observed_sha256": "da452b478d33e5710f36320bd0cf20f2b2aab90f777eecacd8b2f36bf01bde40",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/Sri-Lanka/pretrain/best.ckpt",
+    "expected_sha256": "88cc0f6c723117bec94efd85ea6a68c43315007816d873b914cb9260cdb77532",
+    "observed_sha256": "88cc0f6c723117bec94efd85ea6a68c43315007816d873b914cb9260cdb77532",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/Sri-Lanka/pretrain/last.ckpt",
+    "expected_sha256": "d28b4c56eb9358be83116ff5d3bf798d72610885027b4689b1ac00cc05a913cb",
+    "observed_sha256": "d28b4c56eb9358be83116ff5d3bf798d72610885027b4689b1ac00cc05a913cb",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/USA/finetune/best.ckpt",
+    "expected_sha256": "8fc5292eac2ec863a5a163966d9ff8be4ad5b1f081b23b04229a95182c8901b2",
+    "observed_sha256": "8fc5292eac2ec863a5a163966d9ff8be4ad5b1f081b23b04229a95182c8901b2",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/USA/finetune/best-v1.ckpt",
+    "expected_sha256": "aa5109b79d40b4d4515177758166115398a2f18a6f3d903cdc9aaa91907cff62",
+    "observed_sha256": "aa5109b79d40b4d4515177758166115398a2f18a6f3d903cdc9aaa91907cff62",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/USA/finetune/last.ckpt",
+    "expected_sha256": "8fc5292eac2ec863a5a163966d9ff8be4ad5b1f081b23b04229a95182c8901b2",
+    "observed_sha256": "8fc5292eac2ec863a5a163966d9ff8be4ad5b1f081b23b04229a95182c8901b2",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/USA/finetune/last-v1.ckpt",
+    "expected_sha256": "aa5109b79d40b4d4515177758166115398a2f18a6f3d903cdc9aaa91907cff62",
+    "observed_sha256": "aa5109b79d40b4d4515177758166115398a2f18a6f3d903cdc9aaa91907cff62",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/USA/pretrain/best.ckpt",
+    "expected_sha256": "c5a54ae0363f69b15ddb27d346503353098ea9e59573529feb541f64b1720f71",
+    "observed_sha256": "c5a54ae0363f69b15ddb27d346503353098ea9e59573529feb541f64b1720f71",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/USA/pretrain/best-v1.ckpt",
+    "expected_sha256": "60e2b851a9916feccb5f891c5392eb352d904642111d68f40e0306dead175b78",
+    "observed_sha256": "60e2b851a9916feccb5f891c5392eb352d904642111d68f40e0306dead175b78",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/USA/pretrain/last.ckpt",
+    "expected_sha256": "6e09d5cc5063fff5c319b5d1e680a4b878054848def58bf4a3c22417beb32c97",
+    "observed_sha256": "6e09d5cc5063fff5c319b5d1e680a4b878054848def58bf4a3c22417beb32c97",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/loco/USA/pretrain/last-v1.ckpt",
+    "expected_sha256": "ade14eaf149ac7435dafc926fa4947025c923bdfc029b039e26b27eabe1e2ca3",
+    "observed_sha256": "ade14eaf149ac7435dafc926fa4947025c923bdfc029b039e26b27eabe1e2ca3",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/country_ablation_usa/finetune/best.ckpt",
+    "expected_sha256": "f4d59f2804a5b17d366ccad7c6919a1eb4841dfb77703c8029d2e2648393386a",
+    "observed_sha256": "f4d59f2804a5b17d366ccad7c6919a1eb4841dfb77703c8029d2e2648393386a",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "models/country_ablation_usa/pretrain/best.ckpt",
+    "expected_sha256": "1f1c565528a59b397f2691a605ed29f500fc0ffcdaa4bcf95c55bec6c520f313",
+    "observed_sha256": "1f1c565528a59b397f2691a605ed29f500fc0ffcdaa4bcf95c55bec6c520f313",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "mlruns/21/e58513e88c384f2f84d914444d535282/artifacts/best/best.ckpt",
+    "expected_sha256": "aadeddd17220b16055875d8789b2e037605aa98a6d34544cafe1cad4fa4877a9",
+    "observed_sha256": "aadeddd17220b16055875d8789b2e037605aa98a6d34544cafe1cad4fa4877a9",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  },
+  {
+    "path": "mlruns/21/53fa153aa42a47b6a8926f06974e9f92/artifacts/best/best.ckpt",
+    "expected_sha256": "a9b59874003cde6229462dba5e8192e9604ed2a086da4b3ae69025ebe41d530b",
+    "observed_sha256": "a9b59874003cde6229462dba5e8192e9604ed2a086da4b3ae69025ebe41d530b",
+    "matches": true,
+    "evidence": "D direct file hashing"
+  }
+]

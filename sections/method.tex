@@ -1,0 +1,135 @@
+\section{Method}
+\label{sec:method}
+
+Figure~\ref{fig:pipeline} gives an overview. The benchmark and the
+Azerbaijan prototype use the same three-channel SAR representation.
+The benchmark scores the raw output of DeepLabV3+. The Azerbaijan path
+runs a different network on scene tiles and applies two downstream
+exclusions to the resulting water mask.
+
+\begin{figure}[!htbp]
+\centering
+\input{figures/pipeline.tex}
+\caption{Benchmark and prototype paths. Both use VV, VH and VV$-$VH.
+Water IoU for the event-held-out comparison is computed on raw
+DeepLabV3+ output. The Azerbaijan prototype filters the raw stitched
+SegFormer-B4 water mask with JRC occurrence and DEM-based terrain and
+coverage information before rendering the map.}
+\label{fig:pipeline}
+\end{figure}
+
+\subsection{Input Representation}
+\label{sec:input}
+
+The network input is a three-channel SAR image of size $512\times512$
+with the channels VV (vertical--vertical), VH (vertical--horizontal),
+and their ratio, computed as the difference VV$-$VH in dB. The
+polarizations are complementary. VV carries the surface backscatter,
+and VH helps to separate land from water, because smooth water
+backscatters much less than surrounding land. The ratio channel emphasizes
+the difference between the two polarizations. Using three channels also
+matches the input format expected by ImageNet-pretrained encoders
+\cite{deng2009}, so the pretrained first layer can be used without
+modification.
+
+Each channel is clipped to a fixed dB range and then linearly rescaled to
+$[0,1]$: VV to $[-25,0]$ dB, VH to $[-35,0]$ dB, and VV$-$VH to
+$[0,18]$ dB. The exploratory analysis used to set these ranges drew from
+the full hand catalog. Its reconstructed 80-chip sample includes 16
+official test SAR inputs, three Bolivia holdout inputs and all 11
+hand-labeled groups. The fixed ranges were shared by both comparison
+arms and incorporate benchmark test covariates.
+
+Wind roughens the water surface and raises its backscatter, so water can
+resemble land. Conversely, recurrent water and radar shadow can both
+look dark. This motivates the two downstream exclusions in
+Sec.~\ref{sec:fusion}.
+
+\subsection{Architecture}
+
+We use DeepLabV3+ \cite{chen2018deeplabv3plus} with an ImageNet-initialized
+ResNet-50 encoder \cite{he2016resnet} for the event comparison.
+DeepLabV3+ is an encoder--decoder architecture for semantic segmentation.
+Dilated convolutions and an Atrous Spatial Pyramid Pooling (ASPP) module
+capture context at multiple scales, and a lightweight decoder refines
+the result to sharpen object boundaries.
+
+\subsection{Two-Stage Training}
+\label{sec:training}
+
+Hand-labeled data are scarce, so we train in two stages: pretraining
+on chips whose labels were derived automatically from Sentinel-2 imagery,
+followed by fine-tuning on manually annotated chips. The first stage
+exposes the model to a large but noisy dataset, and the second adapts it
+to expert labels. The named held-out event is excluded from both stages
+in the reconstructed LOCO manifests (Sec.~\ref{sec:protocol}). We compare
+with a single-stage baseline trained on hand labels in
+Sec.~\ref{sec:ablations}.
+
+\paragraph{Optimization.}
+Both stages use Adam with a constant learning rate and no weight decay
+or scheduler, and Dice loss except where noted. The effective batch
+size is 8 (batch size 2 with 4 gradient-accumulation steps), and training
+uses mixed precision (fp16). Pretraining uses a learning rate of
+$3\times10^{-4}$ for up to 20 epochs with early stopping (patience 5).
+Fine-tuning uses $10^{-4}$ for up to 50 epochs, keeping the checkpoint
+with the best validation IoU. Training augmentation is horizontal flip,
+vertical flip and right-angle rotation, each applied independently
+with probability 0.5. Validation and test chips are not augmented.
+
+\subsection{Loss Function}
+
+With water in roughly one in ten labeled training pixels, the loss must
+cope with strong class imbalance. We compared 11 variants, including
+binary cross-entropy (BCE) with positive weights of 1, 4, 8.4 and 13,
+and overlap-based objectives. We adopt the Dice loss \cite{milletari2016},
+shown without its numerical stabilizer:
+\begin{equation}
+\mathcal{L}_{\mathrm{Dice}}
+=1-\frac{2\sum_i p_i g_i}{\sum_i p_i+\sum_i g_i},
+\label{eq:dice}
+\end{equation}
+where $p_i\in[0,1]$ is the predicted water probability and
+$g_i\in\{0,1\}$ the label on valid pixel $i$. Dice was within 0.001
+validation IoU of the leading Tversky variant in the short ResNet-34
+sweep, and needs no additional class-imbalance hyperparameter
+(Sec.~\ref{sec:ablations}).
+
+\subsection{Post-Processing Fusion}
+\label{sec:fusion}
+
+\paragraph{Recurrent water (JRC).}
+We use JRC Global Surface Water occurrence \cite{pekel2016high} and
+subtract predicted positives where valid historical occurrence is at
+least 20\%. This threshold is a recurrence proxy. It can remove genuine
+event-date water as well as persistent water. Missing JRC pixels trigger
+no JRC exclusion.
+
+\paragraph{Layover and shadow (DEM).}
+Radar terrain distortions depend on the viewing geometry and local
+slope \cite{vollrath2020}. On a north-up raster, columns increase
+eastward and rows increase southward. Let $s$ be the terrain slope
+magnitude and $\alpha$ the downhill aspect, clockwise from north.
+The sensor-to-ground azimuth $\varphi$ is nominally $90^\circ$ for
+ascending passes and $270^\circ$ for descending passes. For nominal
+incidence $\theta_i$, the signed angle in the range plane is
+\begin{equation}
+\theta_{\mathrm{loc}}=\theta_i+
+\arctan\!\bigl(\tan s\cos(\varphi-\alpha)\bigr).
+\label{eq:local-incidence}
+\end{equation}
+Terrain rising along the look direction faces the sensor. Its
+downhill projection along that direction is negative, reducing
+local incidence. Pixels with $\theta_{\mathrm{loc}}\leq0^\circ$ are
+flagged for layover and those with $\theta_{\mathrm{loc}}\geq90^\circ$
+for shadow. Both scene replays use SRTM1 \cite{farr2007}, a nominal
+incidence of $37.55^\circ$ (the midpoint of $29.1^\circ$ and $46.0^\circ$),
+and the eastward look approximation. Missing DEM is excluded along
+with a one-pixel dilation of the coverage gaps.
+
+\paragraph{Order of operations and evaluation.}
+The JRC mask is subtracted from predicted water first, and the
+terrain/coverage mask is applied second. Sen1Floods11 labels include
+persistent water present on the event date, so the benchmark scores raw
+water masks before these exclusions. We examine the filtered map as a
+separate downstream product in Sec.~\ref{sec:deployment}.

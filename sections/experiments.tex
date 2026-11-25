@@ -1,0 +1,108 @@
+\section{Experiments}
+\label{sec:experiments}
+
+\subsection{Setup}
+
+Section~\ref{sec:dataset} describes the data, protocol and metrics.
+Section~\ref{sec:method} describes the model, optimizer, batch size
+and augmentation. We found no canonical chip-ID overlap between the
+official test subset and the reconstructed weak or hand training and
+validation roles. The georeferenced checks likewise found no positive-area
+interior intersections above the specified tolerance ($10^{-8}$ degrees
+on both axes) across 425,250 generalist test-to-role tile pairs. Boundary
+contacts or sub-tolerance intersections occur for 73 test chips against
+weak training and 35 against hand training. These checks describe the
+recorded membership and current raster grids. Shared scene context,
+adjacency and preprocessing exposure remain sources of dependence.
+
+\subsection{LOCO Results}
+\label{sec:loco}
+
+Table~\ref{tab:a1test} reports the nine recoverable event--seed comparisons
+out of 30 planned, spanning seven events and 51 of the 90 unique
+official test chips. The fixed generalist reaches pooled IoU 0.676564
+and F1 0.807084 over all 90 chips. Two official chips contain no valid
+pixels and contribute zero counts. Ghana, India and Paraguay have no
+recoverable LOCO results under the frozen selection.
+
+\begin{table}[!htbp]
+\caption{Pooled water-class IoU on each event's official test chips.
+Dashes indicate unavailable event-excluded results. Differences use
+full-precision scores.}
+\label{tab:a1test}
+\centering\small
+\input{sections/tables/test_only}
+\end{table}
+
+For USA seed 42, the historical evaluator used an interrupted run's
+\texttt{best.ckpt}. The reconstruction uses the completed retry's
+\texttt{best-v1.ckpt}, selected by its validation maximum. The two USA
+scores consequently refer to different checkpoints. No all-event mean,
+event ranking or three-seed interval is estimated from the surviving
+runs.
+
+\subsection{Interpolation vs. Generalization on Paired Test Chips}
+\label{sec:sensitivity}
+
+On the same test chips, five of the nine differences in Eq.~\ref{eq:paired} are positive
+and four are negative, from $-0.033583$ to $+0.025312$.
+Mekong and Pakistan each change sign between seeds 43 and 44.
+Variation across generalist training runs remains unmeasured.
+
+We recompute the difference after dropping each test chip in turn
+from both models, leaving the weights, valid masks and threshold fixed.
+Across 63 such omissions, seven of nine comparisons can reverse sign.
+In Pakistan seed 44, one chip contains 171,908 of 198,897 labeled water
+pixels. Removing that chip changes the difference from $+0.0253$ to
+$-0.2220$. Figure~\ref{fig:chip-sensitivity} shows the full-chip
+difference and the observed minimum and maximum under each single-chip
+omission. These are deterministic sensitivity ranges on the observed
+sample. They have no confidence-interval interpretation.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\linewidth]{figures/chip_sensitivity.pdf}
+\caption{Full-test paired water-IoU differences (dots) and the observed
+minimum and maximum after omitting one test chip from both models
+(horizontal ranges). The dashed line marks zero.}
+\label{fig:chip-sensitivity}
+\end{figure}
+
+\subsection{Ablations}
+\label{sec:ablations}
+
+\paragraph{Two-stage training.}
+We compare the two-stage scheme with a single-stage baseline trained
+on hand labels only (Table~\ref{tab:two-stage}). These two seed-42
+DeepLabV3+/ResNet-50 runs reached test IoUs of 0.6732 and 0.6766.
+The fine-tuning settings recorded for the two runs were closely
+matched, with different source snapshots. Weak labels provide a
+greater variety of scenes than manual chips alone, a motivation for
+pretraining. The numerical difference describes these two fits.
+
+\begin{table}[!htbp]
+\caption{Two-stage and hand-only DeepLabV3+/ResNet-50 runs, seed 42,
+evaluated on the standard hand test split.}
+\label{tab:two-stage}
+\centering\small
+\input{sections/tables/two_stage}
+\end{table}
+
+\paragraph{Loss function.}
+Table~\ref{tab:loss} gives the full sweep over 11 variants. The three
+overlap-based losses (Focal-Tversky, Tversky and Dice) are within 0.001
+validation IoU of each other. In this sweep their advantage over the
+best BCE setting is about 0.04 IoU. Dice needs no imbalance
+hyperparameter, which motivated its use in the event-held-out recipe.
+BCE at weight 8.4, taken from the full-catalog label ratio, scored below
+weight 4. The class-ratio heuristic was therefore a poor guide to the
+best weight in this setting.
+
+\begin{table}[!htbp]
+\caption{Loss sweep on the 89-chip validation split using
+DeepLabV3+/ResNet-34, seed 42, one run per variant on a Colab T4,
+with a 40-epoch limit and early stopping (patience 8).}
+\label{tab:loss}
+\centering\small
+\input{sections/tables/loss_sweep}
+\end{table}

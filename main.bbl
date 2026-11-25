@@ -1,0 +1,123 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\providecommand{\doi}[1]{https://doi.org/#1}
+
+\bibitem{abraham2019}
+Abraham, N., Khan, N.M.: A novel focal tversky loss function with improved
+  attention {U-Net} for lesion segmentation. In: IEEE International Symposium
+  on Biomedical Imaging. pp. 683--687 (2019),
+  \url{https://doi.org/10.1109/ISBI.2019.8759329}
+
+\bibitem{baku2026}
+{Baku City Executive Power}: Heavy rains have caused complications in {Baku};
+  institutions are working in an enhanced mode (2026),
+  \url{https://baku-ih.gov.az/en/news/heavy-rains-have-caused-complications-in-baku-institutions-are-working-in-an-enhanced-mode.html},
+  april 6, municipal incident report
+
+\bibitem{berman2018}
+Berman, M., Triki, A.R., Blaschko, M.B.: The {Lov{\'a}sz-Softmax} loss: A
+  tractable surrogate for the optimization of the intersection-over-union
+  measure in neural networks. In: IEEE/CVF Conference on Computer Vision and
+  Pattern Recognition. pp. 4413--4421 (2018),
+  \url{https://doi.org/10.1109/CVPR.2018.00464}
+
+\bibitem{bonafilia2020}
+Bonafilia, D., Tellman, B., Anderson, T., Issenberg, E.: {Sen1Floods11}: A
+  georeferenced dataset to train and test deep learning flood algorithms for
+  {Sentinel-1}. In: IEEE/CVF Conference on Computer Vision and Pattern
+  Recognition Workshops (2020),
+  \url{https://doi.org/10.1109/CVPRW50498.2020.00113}
+
+\bibitem{chen2018deeplabv3plus}
+Chen, L.C., Zhu, Y., Papandreou, G., Schroff, F., Adam, H.: Encoder-decoder
+  with atrous separable convolution for semantic image segmentation. In:
+  European Conference on Computer Vision. pp. 833--851 (2018),
+  \url{https://doi.org/10.1007/978-3-030-01234-2_49}
+
+\bibitem{deng2009}
+Deng, J., Dong, W., Socher, R., Li, L.J., Li, K., Fei-Fei, L.: {ImageNet}: A
+  large-scale hierarchical image database. In: IEEE Conference on Computer
+  Vision and Pattern Recognition. pp. 248--255 (2009),
+  \url{https://doi.org/10.1109/CVPR.2009.5206848}
+
+\bibitem{farr2007}
+Farr, T.G., Rosen, P.A., Caro, E., Crippen, R., Duren, R., Hensley, S., et~al.:
+  The shuttle radar topography mission. Reviews of Geophysics  \textbf{45}(2),
+  RG2004 (2007), \url{https://doi.org/10.1029/2005RG000183}
+
+\bibitem{gorelick2017}
+Gorelick, N., Hancher, M., Dixon, M., Ilyushchenko, S., Thau, D., Moore, R.:
+  Google earth engine: Planetary-scale geospatial analysis for everyone. Remote
+  Sensing of Environment  \textbf{202},  18--27 (2017),
+  \url{https://doi.org/10.1016/j.rse.2017.06.031}
+
+\bibitem{he2016resnet}
+He, K., Zhang, X., Ren, S., Sun, J.: Deep residual learning for image
+  recognition. In: IEEE Conference on Computer Vision and Pattern Recognition.
+  pp. 770--778 (2016), \url{https://doi.org/10.1109/CVPR.2016.90}
+
+\bibitem{lin2017focal}
+Lin, T.Y., Goyal, P., Girshick, R., He, K., Doll{\'a}r, P.: Focal loss for
+  dense object detection. In: IEEE International Conference on Computer Vision.
+  pp. 2980--2988 (2017), \url{https://doi.org/10.1109/ICCV.2017.324}
+
+\bibitem{milletari2016}
+Milletari, F., Navab, N., Ahmadi, S.A.: {V-Net}: Fully convolutional neural
+  networks for volumetric medical image segmentation. In: International
+  Conference on 3D Vision. pp. 565--571 (2016),
+  \url{https://doi.org/10.1109/3DV.2016.79}
+
+\bibitem{pekel2016high}
+Pekel, J.F., Cottam, A., Gorelick, N., Belward, A.S.: High-resolution mapping
+  of global surface water and its long-term changes. Nature  \textbf{540},
+  418--422 (2016), \url{https://doi.org/10.1038/nature20584}
+
+\bibitem{roberts2017}
+Roberts, D.R., Bahn, V., Ciuti, S., Boyce, M.S., Elith, J., Guillera-Arroita,
+  G., Hauenstein, S., Lahoz-Monfort, J.J., Schr{\"o}der, B., Thuiller, W.,
+  Warton, D.I., Wintle, B.A., Hartig, F., Dormann, C.F.: Cross-validation
+  strategies for data with temporal, spatial, hierarchical, or phylogenetic
+  structure. Ecography  \textbf{40}(8),  913--929 (2017),
+  \url{https://doi.org/10.1111/ecog.02881}
+
+\bibitem{salehi2017}
+Salehi, S.S.M., Erdogmus, D., Gholipour, A.: Tversky loss function for image
+  segmentation using {3D} fully convolutional deep networks. In: Machine
+  Learning in Medical Imaging. pp. 379--387 (2017),
+  \url{https://doi.org/10.1007/978-3-319-67389-9_44}
+
+\bibitem{small2011}
+Small, D.: Flattening gamma: Radiometric terrain correction for {SAR} imagery.
+  IEEE Transactions on Geoscience and Remote Sensing  \textbf{49}(8),
+  3081--3093 (2011), \url{https://doi.org/10.1109/TGRS.2011.2120616}
+
+\bibitem{torres2012}
+Torres, R., Snoeij, P., Geudtner, D., Bibby, D., Davidson, M., Attema, E.,
+  et~al.: {GMES} {Sentinel-1} mission. Remote Sensing of Environment
+  \textbf{120},  9--24 (2012), \url{https://doi.org/10.1016/j.rse.2011.05.028}
+
+\bibitem{turkmenli2025}
+T{\"u}rkmenli, I., Kayabol, K., Aptoula, E.: A comparative domain
+  generalization study for {SAR} image-based flood segmentation. In: Joint
+  Urban Remote Sensing Event (2025). \doi{10.1109/JURSE60372.2025.11075977}
+
+\bibitem{twele2016sentinel1}
+Twele, A., Cao, W., Plank, S., Martinis, S.: {Sentinel-1}-based flood mapping:
+  A fully automated processing chain. International Journal of Remote Sensing
+  \textbf{37}(13),  2990--3004 (2016),
+  \url{https://doi.org/10.1080/01431161.2016.1192304}
+
+\bibitem{vollrath2020}
+Vollrath, A., Mullissa, A., Reiche, J.: Angular-based radiometric slope
+  correction for {Sentinel-1} on {Google Earth Engine}. Remote Sensing
+  \textbf{12}(11), ~1867 (2020). \doi{10.3390/rs12111867}
+
+\bibitem{xie2021segformer}
+Xie, E., Wang, W., Yu, Z., Anandkumar, A., Alvarez, J.M., Luo, P.: {SegFormer}:
+  Simple and efficient design for semantic segmentation with transformers. In:
+  Advances in Neural Information Processing Systems. vol.~34, pp. 12077--12090
+  (2021),
+  \url{https://proceedings.neurips.cc/paper/2021/hash/64f1f27bf1b4ec22924fd0acb550c235-Abstract.html}
+
+\end{thebibliography}

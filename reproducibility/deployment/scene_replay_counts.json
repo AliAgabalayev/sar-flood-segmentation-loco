@@ -1,0 +1,37 @@
+{
+  "ml_commit": "867a4f3e3dae9a935578e401f5c5f970e3d0adac",
+  "checkpoint": {
+    "sha256": "96d634b95a7ac53a77dba4f5ccc4f1ebbec7779a4103cd6b26bd7544d5c956f6",
+    "epoch_index": 46,
+    "global_step": 1504,
+    "tensor_count": 930
+  },
+  "scenes": [
+    {
+      "site": "baku",
+      "tile_count": 35,
+      "full_raster_pixels": 6202752,
+      "raw_positive_pixels": 960106,
+      "raw_positive_pct_full_raster": 15.478710095131968,
+      "after_jrc_positive_pixels": 165158,
+      "after_jrc_and_dem_positive_pixels": 41319,
+      "after_jrc_and_dem_positive_pct_full_raster": 0.6661398037516251,
+      "raw_positives_removed_pct": 95.69641268776573,
+      "published_positive_pixels": 41320,
+      "pixel_differences_vs_published_mask": 1
+    },
+    {
+      "site": "sabirabad",
+      "tile_count": 30,
+      "full_raster_pixels": 5806168,
+      "raw_positive_pixels": 116713,
+      "raw_positive_pct_full_raster": 2.0101554071463315,
+      "after_jrc_positive_pixels": 44785,
+      "after_jrc_and_dem_positive_pixels": 26668,
+      "after_jrc_and_dem_positive_pct_full_raster": 0.45930465670300963,
+      "raw_positives_removed_pct": 77.15078868677868,
+      "published_positive_pixels": 26669,
+      "pixel_differences_vs_published_mask": 1
+    }
+  ]
+}

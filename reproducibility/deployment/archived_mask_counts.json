@@ -1,0 +1,68 @@
+[
+  {
+    "site": "baku",
+    "acquisition_date_as_recorded": "2026-04-07",
+    "asset_commit": "74d6227388bb11b936a7819d8b552e4360dcfef6",
+    "asset_directory": "web/public/data/baku/2026-04-07",
+    "asset_sha256": {
+      "flood_mask.tif": "423c89af8de0968e37aacfa50a0423d18db14ac3bdc2e7bc04656cd1dfbba985",
+      "permanent_water.tif": "995a0ac8186d9c3f97ca33374db169de33f2f44a6b9687457fd77b0d0cb80d56",
+      "layover_shadow.tif": "481c7445d5ac4f1561c12cfffe9f25dbde90a6920733990e3528e3c542504373"
+    },
+    "raster_height": 2228,
+    "raster_width": 2784,
+    "raster_pixel_count": 6202752,
+    "bounds_wgs84": [
+      49.799994237262325,
+      40.32995451207433,
+      50.0500852123612,
+      40.530099157376156
+    ],
+    "positive_pixels": 41320,
+    "positive_pct_full_raster": 0.6661559256278503,
+    "positive_approx_km2": 3.1453011612391135,
+    "jrc_exclusion_pixels": 902191,
+    "terrain_or_missing_dem_exclusion_pixels": 1241953,
+    "terrain_or_missing_dem_exclusion_pct_full_raster": 20.022612543593553,
+    "either_exclusion_pixels": 2143980,
+    "positive_overlap_with_jrc_exclusion_pixels": 0,
+    "positive_overlap_with_terrain_or_missing_dem_exclusion_pixels": 0,
+    "dem_tile_boundary_for_gap_check": "longitude >= 50 degrees east",
+    "pixels_on_gap_side_of_boundary": 1243224,
+    "terrain_or_missing_dem_exclusion_on_gap_side_pixels": 1240996,
+    "terrain_or_missing_dem_exclusion_on_gap_side_pct_of_flags": 99.92294394393346
+  },
+  {
+    "site": "sabirabad",
+    "acquisition_date_as_recorded": "2026-06-30",
+    "asset_commit": "ad1e350e68dde39c664ddc924d9cd0a61919a030",
+    "asset_directory": "web/public/data/sabirabad/2026-06-30",
+    "asset_sha256": {
+      "flood_mask.tif": "e522cb9d5ae854a4b72405242a5129f7cc094f48021566d4b1a810b8f5e1ea65",
+      "permanent_water.tif": "492cbd16684b92d91022ddb8ca6fd3d491e8a0b0accd0f927e0ebc5ec7624561",
+      "layover_shadow.tif": "864dbc2d0a9df3b48cbac789b5a2efa6ac388b2baf1ce4ee291385b15ba5fe3b"
+    },
+    "raster_height": 2228,
+    "raster_width": 2606,
+    "raster_pixel_count": 5806168,
+    "bounds_wgs84": [
+      48.29594495706101,
+      39.936941575272044,
+      48.53004592010256,
+      40.13708622057387
+    ],
+    "positive_pixels": 26669,
+    "positive_pct_full_raster": 0.4593218797664828,
+    "positive_approx_km2": 2.0418747488816495,
+    "jrc_exclusion_pixels": 98108,
+    "terrain_or_missing_dem_exclusion_pixels": 1826806,
+    "terrain_or_missing_dem_exclusion_pct_full_raster": 31.463195691202873,
+    "either_exclusion_pixels": 1924914,
+    "positive_overlap_with_jrc_exclusion_pixels": 0,
+    "positive_overlap_with_terrain_or_missing_dem_exclusion_pixels": 0,
+    "dem_tile_boundary_for_gap_check": "latitude < 40 degrees north",
+    "pixels_on_gap_side_of_boundary": 1829412,
+    "terrain_or_missing_dem_exclusion_on_gap_side_pixels": 1826806,
+    "terrain_or_missing_dem_exclusion_on_gap_side_pct_of_flags": 100.0
+  }
+]

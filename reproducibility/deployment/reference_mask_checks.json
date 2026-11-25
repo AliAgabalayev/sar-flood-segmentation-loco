@@ -1,0 +1,56 @@
+[
+  {
+    "site": "baku",
+    "jrc_source_tile_sha256": "d35e7bcc538f98a324eb1ec080a83e7807378193fb49de87a71f0f2f9777c42b",
+    "jrc_nodata_pixels": 1243224,
+    "jrc_pixel_differences_vs_archived_exclusion_mask": 0,
+    "dem_source_tile": "SRTM1_N40E049.tif",
+    "dem_source_tile_sha256": "f5a21fc2cc5580ad918614038bd702e91e36857a4306013e8c4288cf054b52d4",
+    "dem_nodata_pixels_before_dilation": 1238768,
+    "dem_nodata_pixels_after_dilation": 1240996,
+    "incidence_sensitivity": [
+      {
+        "nominal_incidence_degrees": 29.1,
+        "angle_flags_outside_dilated_missing_dem": 2623,
+        "pixel_differences_vs_archived_invalid_mask": 1670
+      },
+      {
+        "nominal_incidence_degrees": 37.55,
+        "angle_flags_outside_dilated_missing_dem": 957,
+        "pixel_differences_vs_archived_invalid_mask": 0
+      },
+      {
+        "nominal_incidence_degrees": 46.0,
+        "angle_flags_outside_dilated_missing_dem": 324,
+        "pixel_differences_vs_archived_invalid_mask": 683
+      }
+    ]
+  },
+  {
+    "site": "sabirabad",
+    "jrc_source_tile_sha256": "d35e7bcc538f98a324eb1ec080a83e7807378193fb49de87a71f0f2f9777c42b",
+    "jrc_nodata_pixels": 1829412,
+    "jrc_pixel_differences_vs_archived_exclusion_mask": 0,
+    "dem_source_tile": "SRTM1_N40E048.tif",
+    "dem_source_tile_sha256": "88438e3bdde0bfab52a71977ae1a3e209a8e452b174b5e27684b17c32fe0da6d",
+    "dem_nodata_pixels_before_dilation": 1824200,
+    "dem_nodata_pixels_after_dilation": 1826806,
+    "incidence_sensitivity": [
+      {
+        "nominal_incidence_degrees": 29.1,
+        "angle_flags_outside_dilated_missing_dem": 0,
+        "pixel_differences_vs_archived_invalid_mask": 0
+      },
+      {
+        "nominal_incidence_degrees": 37.55,
+        "angle_flags_outside_dilated_missing_dem": 0,
+        "pixel_differences_vs_archived_invalid_mask": 0
+      },
+      {
+        "nominal_incidence_degrees": 46.0,
+        "angle_flags_outside_dilated_missing_dem": 0,
+        "pixel_differences_vs_archived_invalid_mask": 0
+      }
+    ]
+  }
+]

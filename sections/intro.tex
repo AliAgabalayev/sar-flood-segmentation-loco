@@ -1,0 +1,90 @@
+\section{Introduction}
+\label{sec:intro}
+
+Floods are among the most frequent and damaging natural hazards, and timely
+inundation maps are needed most while the storm is still overhead. Optical
+imagery is often unusable at exactly that moment because of cloud cover.
+Synthetic aperture radar (SAR) does not have this limitation. The Sentinel-1
+mission delivers C-band SAR acquisitions day and night and through cloud
+\cite{torres2012}. Open water often appears dark because smooth water surfaces
+scatter the signal away from the sensor \cite{twele2016sentinel1}. This has
+made Sentinel-1 a workhorse of operational flood mapping.
+
+Deep segmentation networks trained on the Sen1Floods11 benchmark
+\cite{bonafilia2020} are a strong data-driven alternative to threshold-based
+processing chains. The standard evaluation, however, is a chip-level split
+in which training and test chips can originate from the same flood events.
+Scores obtained this way describe how well a model interpolates within
+events it has already seen. What a practitioner needs to know is whether
+the model generalizes to an event that contributed no training labels at
+all. This matters for regions such as Azerbaijan that are absent from
+Sen1Floods11.
+
+We therefore use a leave-one-event-out protocol, retaining the historical
+LOCO (leave-one-country-out) identifier. Each Sen1Floods11 hand-labeled
+group corresponds to a flood event, so an excluded group represents a
+particular event and region. A raw held-out IoU is hard to interpret on its
+own, because some events are simply harder than others. We compare the
+available event-excluded checkpoints with a fixed generalist on exactly
+the same official test chips. This pairs the evaluation inputs while
+leaving differences between the training and validation designs
+(Sec.~\ref{sec:paired}).
+
+Segmentation alone is also insufficient for a usable inundation map.
+Wind-roughened water can look like land, recurrent water bodies look like
+flood water, and SAR terrain distortions such as layover and shadow can
+produce false detections. We address the last two with a post-processing
+fusion that combines the JRC Global Surface Water layer \cite{pekel2016high}
+with a DEM-derived terrain and coverage mask, separately from the
+benchmark (Sec.~\ref{sec:fusion}).
+
+\paragraph{Contributions.}
+\begin{itemize}
+\item We reconstruct a paired, official-test comparison on seven
+Sen1Floods11 events and nine recoverable event--seed combinations
+(Secs.~\ref{sec:dataset} and \ref{sec:loco}).
+\item We report the seed-specific difference and show how it changes
+when individual test chips are omitted (Sec.~\ref{sec:sensitivity}).
+\item We document the VV/VH/ratio input, weak-to-hand training, and an
+11-variant loss sweep under class imbalance
+(Secs.~\ref{sec:method} and \ref{sec:ablations}).
+\item We describe the prototype's recurrent-water and terrain/coverage
+filters and their effect on two unlabeled Azerbaijani scenes
+(Sec.~\ref{sec:deployment}).
+\end{itemize}
+
+\section{Related Work}
+\label{sec:related}
+
+\paragraph{SAR flood mapping.}
+Classical Sentinel-1 flood mapping relies on automated thresholding and
+change detection chains \cite{twele2016sentinel1}. Learning-based methods
+became practical with georeferenced training data. Sen1Floods11
+\cite{bonafilia2020} provides hand-labeled and weakly labeled Sentinel-1
+chips from flood events on several continents and is the benchmark we
+build on.
+
+\paragraph{Ancillary layers and terrain effects.}
+The JRC Global Surface Water dataset \cite{pekel2016high} records how often
+each pixel has been observed as water over several decades and provides a
+prior for recurrent water. On the SAR side, steep terrain produces layover
+and shadow, whose extent depends on the viewing geometry and the local
+slope. The same geometry underlies radiometric terrain correction
+\cite{small2011}. Elevation data such as the Shuttle Radar Topography
+Mission \cite{farr2007} make these effects computable per pixel.
+
+\paragraph{Evaluating generalization.}
+Random splits of spatially autocorrelated data can overestimate
+performance on new locations, motivating blocked or leave-one-group-out
+validation \cite{roberts2017}. T{\"u}rkmenli, Kayabol and Aptoula
+\cite{turkmenli2025} treat flood events as source domains for
+domain-generalization training, whereas we compare an event-excluded
+checkpoint with a fixed generalist on that event's same official test
+chips.
+
+\paragraph{Segmentation under class imbalance.}
+Water pixels are a small minority. Overlap-based objectives such as Dice
+\cite{milletari2016}, Tversky \cite{salehi2017} and Focal-Tversky
+\cite{abraham2019}, the Lov\'asz surrogate for IoU \cite{berman2018},
+and focal loss \cite{lin2017focal} are common answers. We compare them
+with weighted cross-entropy in a validation sweep (Sec.~\ref{sec:ablations}).

@@ -1,0 +1,229 @@
+{
+  "seed": 42,
+  "database_sha256": "3f59db41eef882b0fca03dd123f5e0493d2f0e1faaebbf01d8390a23589b39e9",
+  "historical_control_csv_sha256": "9acf2f2ea561a0a3f2af71dea350dcfea766e8de551eba30b88322e513205618",
+  "interrupted_seed43_pretraining_run_id": "66dc2c95dcc94ea1b19db61ac7955427",
+  "folds": {
+    "Somalia": {
+      "arms": {
+        "loco": {
+          "evaluation_run_id": "746f533bdf8a46e690bfaa50c6628669",
+          "finetune_run_id": null,
+          "reused_checkpoint": true,
+          "n_train": 237,
+          "iou_unseen": 0.3103572130203247,
+          "f1_unseen": 0.47369861602783203,
+          "iou_test": 0.5151035785675049,
+          "f1_test": 0.6799582242965698,
+          "n_test": 6.0,
+          "n_unseen": 11.0
+        },
+        "ctrl": {
+          "evaluation_run_id": "f8076a89128d4ad3adf5cadbd1d9dccb",
+          "finetune_run_id": "85d9416e0d7443d19a55a5d24fca9d0b",
+          "reused_checkpoint": false,
+          "n_train": 237,
+          "iou_unseen": 0.33527374267578125,
+          "f1_unseen": 0.5021798014640808,
+          "iou_test": 0.4962565004825592,
+          "f1_test": 0.6633307933807373,
+          "n_test": 6.0,
+          "n_unseen": 11.0
+        },
+        "full": {
+          "evaluation_run_id": "7de4d54c6ce9408e95fa12a1b8891dde",
+          "finetune_run_id": "0eae709ecf2f456e92d030c68047e801",
+          "reused_checkpoint": false,
+          "n_train": 252,
+          "iou_unseen": 0.3345688581466675,
+          "f1_unseen": 0.501388669013977,
+          "iou_test": 0.5495529770851135,
+          "f1_test": 0.7093051671981812,
+          "n_test": 6.0,
+          "n_unseen": 11.0
+        }
+      },
+      "official_test_iou_differences": {
+        "ctrl_minus_loco": -0.01884707808494568,
+        "full_minus_ctrl": 0.05329647660255432,
+        "full_minus_loco": 0.03444939851760864
+      },
+      "current_manifest_sha256": {
+        "data/splits/control/Somalia/eval_unseen/test.csv": "9aecb3553ca1c200cc992917dacc5592d708e8cd872e43669038650c71eeccd5",
+        "data/splits/control/Somalia/eval_test/test.csv": "6a6b561c5cc45f8dd5e48efdbae1dfa46393aa3c19a00d48a367afe0624064cb",
+        "data/splits/control/Somalia/seed42/loco/train.csv": "f3353eb08c5886ba78041f1b8c936c1c19c6408c27d4dd8f1ced05065209f3f7",
+        "data/splits/control/Somalia/seed42/loco/val.csv": "c8e146d268c89cff343ca3e678f68fd20af6a83b9a789ee6c40b215bff222f29",
+        "data/splits/control/Somalia/seed42/ctrl/train.csv": "c857485e2dd5e23abab50d72cbe7bb74fe278a5cb1d06c797b258a4fd3d73d35",
+        "data/splits/control/Somalia/seed42/ctrl/val.csv": "c8e146d268c89cff343ca3e678f68fd20af6a83b9a789ee6c40b215bff222f29",
+        "data/splits/control/Somalia/seed42/full/train.csv": "57be4dc440bf8a526effa77e06d4b8cb7a8484589c0bffa201d8e0f49e994beb",
+        "data/splits/control/Somalia/seed42/full/val.csv": "c8e146d268c89cff343ca3e678f68fd20af6a83b9a789ee6c40b215bff222f29"
+      }
+    },
+    "Spain": {
+      "arms": {
+        "loco": {
+          "evaluation_run_id": "dfc6a54a94fb4ff6bef29d49f35a4ecb",
+          "finetune_run_id": null,
+          "reused_checkpoint": true,
+          "n_train": 234,
+          "iou_unseen": 0.7339825630187988,
+          "f1_unseen": 0.8465858697891235,
+          "iou_test": 0.7215367555618286,
+          "f1_test": 0.8382472991943359,
+          "n_test": 6.0,
+          "n_unseen": 12.0
+        },
+        "ctrl": {
+          "evaluation_run_id": "c195fec4dc3a4b6a9c5932b37d68301e",
+          "finetune_run_id": "74b89adb25d94671a53f4f174b51f4a1",
+          "reused_checkpoint": false,
+          "n_train": 234,
+          "iou_unseen": 0.7299780249595642,
+          "f1_unseen": 0.8439159393310547,
+          "iou_test": 0.7166897654533386,
+          "f1_test": 0.8349671363830566,
+          "n_test": 6.0,
+          "n_unseen": 12.0
+        },
+        "full": {
+          "evaluation_run_id": "3e38a79659db471eb161870b8466eb93",
+          "finetune_run_id": "d048df0d0428410892b7836aecf16bee",
+          "reused_checkpoint": false,
+          "n_train": 252,
+          "iou_unseen": 0.7293840050697327,
+          "f1_unseen": 0.843518853187561,
+          "iou_test": 0.7106735706329346,
+          "f1_test": 0.8308699131011963,
+          "n_test": 6.0,
+          "n_unseen": 12.0
+        }
+      },
+      "official_test_iou_differences": {
+        "ctrl_minus_loco": -0.00484699010848999,
+        "full_minus_ctrl": -0.006016194820404053,
+        "full_minus_loco": -0.010863184928894043
+      },
+      "current_manifest_sha256": {
+        "data/splits/control/Spain/eval_unseen/test.csv": "5da1b6cdc377bef444758bb4ce0e2befcecf853c879cdbfd5f3de642a5184927",
+        "data/splits/control/Spain/eval_test/test.csv": "29cad5a7d2fa0bcae92bf9b26e92756802efae331b276dc3cf4406ca76ec4a4c",
+        "data/splits/control/Spain/seed42/loco/train.csv": "cd02d26ec971f5db2ded39e05ea1941df6537cf56ad59f132714704b84d1bce7",
+        "data/splits/control/Spain/seed42/loco/val.csv": "b530aa73d5a33fd124d5da217520172ca742eb16953460eda5f0fc413f60e384",
+        "data/splits/control/Spain/seed42/ctrl/train.csv": "5dcadaa47ee00dd86a9976ad389df2f49a2ba160f012293d6d2f33c5765e023c",
+        "data/splits/control/Spain/seed42/ctrl/val.csv": "b530aa73d5a33fd124d5da217520172ca742eb16953460eda5f0fc413f60e384",
+        "data/splits/control/Spain/seed42/full/train.csv": "57be4dc440bf8a526effa77e06d4b8cb7a8484589c0bffa201d8e0f49e994beb",
+        "data/splits/control/Spain/seed42/full/val.csv": "b530aa73d5a33fd124d5da217520172ca742eb16953460eda5f0fc413f60e384"
+      }
+    },
+    "Sri-Lanka": {
+      "arms": {
+        "loco": {
+          "evaluation_run_id": "a259672d25544edc9ec2fbe496ef503d",
+          "finetune_run_id": null,
+          "reused_checkpoint": true,
+          "n_train": 228,
+          "iou_unseen": 0.7674970030784607,
+          "f1_unseen": 0.8684563636779785,
+          "iou_test": 0.8377320170402527,
+          "f1_test": 0.911702036857605,
+          "n_test": 9.0,
+          "n_unseen": 18.0
+        },
+        "ctrl": {
+          "evaluation_run_id": "95c202dc2a774001a8a54b32a663a340",
+          "finetune_run_id": "d70b527339194a7f811a149d3c0e2a33",
+          "reused_checkpoint": false,
+          "n_train": 228,
+          "iou_unseen": 0.7087200880050659,
+          "f1_unseen": 0.8295332789421082,
+          "iou_test": 0.8143129944801331,
+          "f1_test": 0.8976543545722961,
+          "n_test": 9.0,
+          "n_unseen": 18.0
+        },
+        "full": {
+          "evaluation_run_id": "a7a0bf0555e24fa9ae882bdcf870682d",
+          "finetune_run_id": "e4f4df4429e7466f939325cc95d109f7",
+          "reused_checkpoint": false,
+          "n_train": 252,
+          "iou_unseen": 0.7861984968185425,
+          "f1_unseen": 0.8803036212921143,
+          "iou_test": 0.845992922782898,
+          "f1_test": 0.9165722131729126,
+          "n_test": 9.0,
+          "n_unseen": 18.0
+        }
+      },
+      "official_test_iou_differences": {
+        "ctrl_minus_loco": -0.02341902256011963,
+        "full_minus_ctrl": 0.03167992830276489,
+        "full_minus_loco": 0.008260905742645264
+      },
+      "current_manifest_sha256": {
+        "data/splits/control/Sri-Lanka/eval_unseen/test.csv": "d3213c9343d6dcd28099a6803e65d0fafec48f58463b1f7ed6ab877bcad6ce46",
+        "data/splits/control/Sri-Lanka/eval_test/test.csv": "0dfd7146f698a3bfdbfcae68c026971e82d1ba51bf65fb72f03d433ebb5aa4d3",
+        "data/splits/control/Sri-Lanka/seed42/loco/train.csv": "da528fba66b07ea59c111a05c9a0b7d30af8772b0e97400bb2e7579791316edb",
+        "data/splits/control/Sri-Lanka/seed42/loco/val.csv": "75b19e3dc93c2abdb4a12a3062fa55a94cfb8cbf459cc8ddeb83a06b0999da91",
+        "data/splits/control/Sri-Lanka/seed42/ctrl/train.csv": "dff2837649b623e29b35281fd9d28a8eb81d3a332a033b529112a43723cc7bd6",
+        "data/splits/control/Sri-Lanka/seed42/ctrl/val.csv": "75b19e3dc93c2abdb4a12a3062fa55a94cfb8cbf459cc8ddeb83a06b0999da91",
+        "data/splits/control/Sri-Lanka/seed42/full/train.csv": "57be4dc440bf8a526effa77e06d4b8cb7a8484589c0bffa201d8e0f49e994beb",
+        "data/splits/control/Sri-Lanka/seed42/full/val.csv": "75b19e3dc93c2abdb4a12a3062fa55a94cfb8cbf459cc8ddeb83a06b0999da91"
+      }
+    },
+    "USA": {
+      "arms": {
+        "loco": {
+          "evaluation_run_id": "7808c0d02594408d9da7335441e24d13",
+          "finetune_run_id": "64836f45d2fc4ac6bd6a5a1c70a78fe7",
+          "reused_checkpoint": false,
+          "n_train": 211,
+          "iou_unseen": 0.5793922543525696,
+          "f1_unseen": 0.7336901426315308,
+          "iou_test": 0.5416757464408875,
+          "f1_test": 0.7027103304862976,
+          "n_test": 14.0,
+          "n_unseen": 28.0
+        },
+        "ctrl": {
+          "evaluation_run_id": "31befcb136854773b7729f442ebfbf24",
+          "finetune_run_id": "bf6cac7d1456459ab978e9bd2539e56b",
+          "reused_checkpoint": false,
+          "n_train": 211,
+          "iou_unseen": 0.3579764664173126,
+          "f1_unseen": 0.5272204279899597,
+          "iou_test": 0.2737158238887787,
+          "f1_test": 0.42979106307029724,
+          "n_test": 14.0,
+          "n_unseen": 28.0
+        },
+        "full": {
+          "evaluation_run_id": "a29ec1eef28f403c87ec0372af229b94",
+          "finetune_run_id": "a112ef6acf2a4ec393ee3a2d197d135a",
+          "reused_checkpoint": false,
+          "n_train": 252,
+          "iou_unseen": 0.5477680563926697,
+          "f1_unseen": 0.7078167200088501,
+          "iou_test": 0.5230933427810669,
+          "f1_test": 0.6868828535079956,
+          "n_test": 14.0,
+          "n_unseen": 28.0
+        }
+      },
+      "official_test_iou_differences": {
+        "ctrl_minus_loco": -0.26795992255210876,
+        "full_minus_ctrl": 0.2493775188922882,
+        "full_minus_loco": -0.018582403659820557
+      },
+      "current_manifest_sha256": {
+        "data/splits/control/USA/eval_unseen/test.csv": "a1ea2df502a4f7855d74b8d92ac481a83ebea0c222a7f78a4d6544d6a455c6d5",
+        "data/splits/control/USA/eval_test/test.csv": "04dd612f40fa059345026cfb323bda7c5389be29a9b6d7677bd05e4d1f374060",
+        "data/splits/control/USA/seed42/loco/train.csv": "aca7ad51db87010aedc6c29b30bd1fdca559b58fdaa69d1efca914c26a85fe42",
+        "data/splits/control/USA/seed42/loco/val.csv": "0d017b81ce27dd7e5307433f4b6a6a548ae0c1a6e746661f4c5d6a8e25f600eb",
+        "data/splits/control/USA/seed42/ctrl/train.csv": "0808d17fb2caedb65f238815e8f30f25c91bd5733bfa61cf8edf81570bb49a15",
+        "data/splits/control/USA/seed42/ctrl/val.csv": "0d017b81ce27dd7e5307433f4b6a6a548ae0c1a6e746661f4c5d6a8e25f600eb",
+        "data/splits/control/USA/seed42/full/train.csv": "57be4dc440bf8a526effa77e06d4b8cb7a8484589c0bffa201d8e0f49e994beb",
+        "data/splits/control/USA/seed42/full/val.csv": "0d017b81ce27dd7e5307433f4b6a6a548ae0c1a6e746661f4c5d6a8e25f600eb"
+      }
+    }
+  },
+  "scope": "September 2026 retrospective audit of logged metrics. Current manifests match the recorded algorithm. Checkpoint/source bytes for most model fits and historical process-read split membership are not established."
+}

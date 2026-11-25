@@ -1,0 +1,106 @@
+{
+  "current_hand_pixel_inventory": {
+    "all_hand": {
+      "chips": 446,
+      "chips_with_valid_pixels": 440,
+      "ignored_or_nonfinite_pixels": 16094420,
+      "label_ignored_pixels": 15932910,
+      "nonwater_pixels": 90177011,
+      "total_pixels": 116916224,
+      "valid_pixels": 100821804,
+      "water_fraction_valid": 0.10558026714142112,
+      "water_pixels": 10644793
+    },
+    "bolivia_holdout": {
+      "chips": 15,
+      "chips_with_valid_pixels": 15,
+      "ignored_or_nonfinite_pixels": 1107726,
+      "label_ignored_pixels": 1064345,
+      "nonwater_pixels": 2372533,
+      "total_pixels": 3932160,
+      "valid_pixels": 2824434,
+      "water_fraction_valid": 0.1599970117906809,
+      "water_pixels": 451901
+    },
+    "test": {
+      "chips": 90,
+      "chips_with_valid_pixels": 88,
+      "ignored_or_nonfinite_pixels": 3149001,
+      "label_ignored_pixels": 3075593,
+      "nonwater_pixels": 17928951,
+      "total_pixels": 23592960,
+      "valid_pixels": 20443959,
+      "water_fraction_valid": 0.12301961669948565,
+      "water_pixels": 2515008
+    },
+    "train": {
+      "chips": 252,
+      "chips_with_valid_pixels": 251,
+      "ignored_or_nonfinite_pixels": 8781031,
+      "label_ignored_pixels": 8756881,
+      "nonwater_pixels": 51832579,
+      "total_pixels": 66060288,
+      "valid_pixels": 57279257,
+      "water_fraction_valid": 0.09508988568060511,
+      "water_pixels": 5446678
+    },
+    "val": {
+      "chips": 89,
+      "chips_with_valid_pixels": 86,
+      "ignored_or_nonfinite_pixels": 3056662,
+      "label_ignored_pixels": 3036091,
+      "nonwater_pixels": 18042948,
+      "total_pixels": 23330816,
+      "valid_pixels": 20274154,
+      "water_fraction_valid": 0.11005174371270929,
+      "water_pixels": 2231206
+    }
+  },
+  "historical_eda_sample_membership_reconstruction": {
+    "by_event": {
+      "Bolivia": 3,
+      "Ghana": 9,
+      "India": 17,
+      "Mekong": 4,
+      "Nigeria": 1,
+      "Pakistan": 4,
+      "Paraguay": 10,
+      "Somalia": 6,
+      "Spain": 2,
+      "Sri-Lanka": 8,
+      "USA": 16
+    },
+    "by_split": {
+      "bolivia_holdout": 3,
+      "test": 16,
+      "train": 44,
+      "val": 17
+    },
+    "catalog_size": 446,
+    "finite_sar_pixels": 20271028,
+    "notebook": "5f0c2e94e53f2a5d6be8cef26db8a07170288e80:notebooks/01_sen1floods11_sar_eda.ipynb",
+    "p1_p99_db": {
+      "VH": [
+        -31.67618938446045,
+        -9.66509115219116
+      ],
+      "VV": [
+        -22.93357173919678,
+        -2.405376882553096
+      ],
+      "VV_minus_VH": [
+        -0.3866004943847656,
+        17.02703445434571
+      ]
+    },
+    "sample_seed": 42,
+    "sample_size": 80
+  },
+  "manifest_sha256": {
+    "bolivia_holdout": "4775d100fae1f1ca66a842b8af6d2a97b8bfc5847f29d88ff0affff2c1e22768",
+    "test": "8b598c9438042f3ed8aed4484268387fae1aa5b660882e1c5b4c1218eba63d67",
+    "train": "57be4dc440bf8a526effa77e06d4b8cb7a8484589c0bffa201d8e0f49e994beb",
+    "val": "04999b82b93e393c32a54ac85b2bf8a18b671f7a6f43a9478b340e8a9b9647fb"
+  },
+  "method": "Labels 0/1 counted where label != -1 and both raw SAR bands are finite."
+}

@@ -1,0 +1,29 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+We revisited the distinction between within-event interpolation and
+event-held-out generalization in SAR water segmentation. The corrected
+comparison uses identical official test chips for each surviving
+event-excluded checkpoint and a fixed generalist. On nine recoverable
+event--seed pairs across seven events, five differences favored the
+event-excluded checkpoint and four favored the generalist. Dropping
+one chip could change the sign in seven pairs. This dependence on the
+observed chips, together with incomplete seeds and different training
+and validation sets, limits what the comparison says about new events.
+
+The Azerbaijan prototype uses SegFormer-B4 and applies JRC occurrence
+and terrain/coverage exclusions to the raw water masks. The two
+historical scene products show how strongly those choices affect the
+mapped extent, particularly where the DEM is missing. Accuracy in
+Azerbaijan remains unmeasured. Repeated training on matched designs
+and independent inundation labels at the satellite overpass would
+address the benchmark and prototype limitations, respectively.
+
+\paragraph{Code and reproducibility.}
+The historical benchmark uses ML commit \texttt{867a4f3}. The upload
+API and offline CLI use the
+\href{https://github.com/AliAgabalayev/Flood-Damage-Detection/commit/23563a7bebf28e508b394cf6858649718fd148a3}{terrain-corrected ML commit}
+(\texttt{23563a7}). The
+\href{https://github.com/AliAgabalayev/flood-paper/tree/paper-v1.0}{companion manuscript repository}
+provides archived per-chip confusion counts, scene replay records and
+commands to regenerate the tables and figures.

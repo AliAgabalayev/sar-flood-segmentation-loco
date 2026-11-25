@@ -1,0 +1,192 @@
+{
+  "gdal_version": "3.12.4",
+  "crs": "EPSG:4326",
+  "axis_tolerance_degrees": 1e-08,
+  "method": "Compare the entire north-up SAR raster bounds, including ignored/nodata pixels. An interior intersection requires overlap on both axes exceeding the tolerance.",
+  "generalist_membership": {
+    "hand_train": {
+      "git_reference": "d42023bea530fcf12e7bee379cd36150aa81e5a7:data/splits/official/train.csv",
+      "sha256": "57be4dc440bf8a526effa77e06d4b8cb7a8484589c0bffa201d8e0f49e994beb",
+      "tiles": 252,
+      "groups": {
+        "Ghana": 31,
+        "India": 40,
+        "Mekong": 18,
+        "Nigeria": 10,
+        "Pakistan": 16,
+        "Paraguay": 39,
+        "Somalia": 15,
+        "Spain": 18,
+        "Sri-Lanka": 24,
+        "USA": 41
+      },
+      "canonical_id_overlaps": [],
+      "footprint_pair_comparisons": 22680,
+      "interior_intersection_pairs": 0,
+      "cross_group_intersection_pairs": 0,
+      "boundary_or_sub_tolerance_pairs": 60,
+      "test_tiles_with_interior_intersections": 0,
+      "test_tiles_with_boundary_or_sub_tolerance_contact": 35
+    },
+    "hand_val": {
+      "git_reference": "d42023bea530fcf12e7bee379cd36150aa81e5a7:data/splits/official/val.csv",
+      "sha256": "04999b82b93e393c32a54ac85b2bf8a18b671f7a6f43a9478b340e8a9b9647fb",
+      "tiles": 89,
+      "groups": {
+        "Ghana": 11,
+        "India": 14,
+        "Mekong": 6,
+        "Nigeria": 4,
+        "Pakistan": 6,
+        "Paraguay": 14,
+        "Somalia": 5,
+        "Spain": 6,
+        "Sri-Lanka": 9,
+        "USA": 14
+      },
+      "canonical_id_overlaps": [],
+      "footprint_pair_comparisons": 8010,
+      "interior_intersection_pairs": 0,
+      "cross_group_intersection_pairs": 0,
+      "boundary_or_sub_tolerance_pairs": 20,
+      "test_tiles_with_interior_intersections": 0,
+      "test_tiles_with_boundary_or_sub_tolerance_contact": 15
+    },
+    "hand_test": {
+      "git_reference": "d42023bea530fcf12e7bee379cd36150aa81e5a7:data/splits/official/test.csv",
+      "sha256": "8b598c9438042f3ed8aed4484268387fae1aa5b660882e1c5b4c1218eba63d67",
+      "tiles": 90,
+      "groups": {
+        "Ghana": 11,
+        "India": 14,
+        "Mekong": 6,
+        "Nigeria": 4,
+        "Pakistan": 6,
+        "Paraguay": 14,
+        "Somalia": 6,
+        "Spain": 6,
+        "Sri-Lanka": 9,
+        "USA": 14
+      }
+    },
+    "weak_train": {
+      "git_reference": "1d2199b762b5c7690ddb878af8d78d5d74729ddd:data/splits/weak/train.csv",
+      "sha256": "96b4ab66a4d43cbdd840c4ef069a9c250ae03ad49ed87553dad478556019c37b",
+      "tiles": 3946,
+      "groups": {
+        "Bolivia": 201,
+        "Colombia": 479,
+        "Ghana": 161,
+        "India": 431,
+        "Mekong": 1218,
+        "Nigeria": 99,
+        "Pakistan": 226,
+        "Paraguay": 279,
+        "Somalia": 114,
+        "Spain": 132,
+        "Sri-Lanka": 176,
+        "USA": 430
+      },
+      "canonical_id_overlaps": [],
+      "footprint_pair_comparisons": 355140,
+      "interior_intersection_pairs": 0,
+      "cross_group_intersection_pairs": 0,
+      "boundary_or_sub_tolerance_pairs": 291,
+      "test_tiles_with_interior_intersections": 0,
+      "test_tiles_with_boundary_or_sub_tolerance_contact": 73
+    },
+    "weak_val": {
+      "git_reference": "1d2199b762b5c7690ddb878af8d78d5d74729ddd:data/splits/weak/val.csv",
+      "sha256": "a0a037009882220e70ad67ba26f2d68a79dbddb90db2ae535ed22efef0d92dbd",
+      "tiles": 438,
+      "groups": {
+        "Bolivia": 23,
+        "Colombia": 55,
+        "Ghana": 20,
+        "India": 36,
+        "Mekong": 135,
+        "Nigeria": 10,
+        "Pakistan": 23,
+        "Paraguay": 37,
+        "Somalia": 15,
+        "Spain": 14,
+        "Sri-Lanka": 14,
+        "USA": 56
+      },
+      "canonical_id_overlaps": [],
+      "footprint_pair_comparisons": 39420,
+      "interior_intersection_pairs": 0,
+      "cross_group_intersection_pairs": 0,
+      "boundary_or_sub_tolerance_pairs": 25,
+      "test_tiles_with_interior_intersections": 0,
+      "test_tiles_with_boundary_or_sub_tolerance_contact": 21
+    }
+  },
+  "loco_membership": {
+    "git_commit": "f5c34320a10df9ffb18b45c2dd06b176e6d4c7d5",
+    "all_folds_equal_generalist_minus_event": true,
+    "counts": {
+      "Ghana": {
+        "hand_train": 221,
+        "hand_val": 78,
+        "weak_train": 3785,
+        "weak_val": 418
+      },
+      "India": {
+        "hand_train": 212,
+        "hand_val": 75,
+        "weak_train": 3515,
+        "weak_val": 402
+      },
+      "Mekong": {
+        "hand_train": 234,
+        "hand_val": 83,
+        "weak_train": 2728,
+        "weak_val": 303
+      },
+      "Nigeria": {
+        "hand_train": 242,
+        "hand_val": 85,
+        "weak_train": 3847,
+        "weak_val": 428
+      },
+      "Pakistan": {
+        "hand_train": 236,
+        "hand_val": 83,
+        "weak_train": 3720,
+        "weak_val": 415
+      },
+      "Paraguay": {
+        "hand_train": 213,
+        "hand_val": 75,
+        "weak_train": 3667,
+        "weak_val": 401
+      },
+      "Somalia": {
+        "hand_train": 237,
+        "hand_val": 84,
+        "weak_train": 3832,
+        "weak_val": 423
+      },
+      "Spain": {
+        "hand_train": 234,
+        "hand_val": 83,
+        "weak_train": 3814,
+        "weak_val": 424
+      },
+      "Sri-Lanka": {
+        "hand_train": 228,
+        "hand_val": 80,
+        "weak_train": 3770,
+        "weak_val": 424
+      },
+      "USA": {
+        "hand_train": 211,
+        "hand_val": 75,
+        "weak_train": 3516,
+        "weak_val": 382
+      }
+    }
+  },
+  "scope": "Local TIFF footprint evidence for the referenced Git manifests. Historical process-read membership, adjacent tiles, shared source scenes, undocumented derivations and preprocessing design remain separate concerns."
+}
