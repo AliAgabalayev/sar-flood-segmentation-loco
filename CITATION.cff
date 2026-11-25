@@ -1,7 +1,10 @@
 cff-version: 1.2.0
-message: "Please cite the manuscript when using this repository."
+message: "Please cite the manuscript when using this repository. Manuscript and original scholarly figures/tables: CC BY 4.0; original software: MIT. See the repository license notices for scope."
 title: "Interpolation vs. Generalization in SAR Water Segmentation"
 type: dataset
+license:
+  - MIT
+  - CC-BY-4.0
 version: "1.0"
 date-released: 2026-11-25
 repository-code: "https://github.com/AliAgabalayev/sar-flood-segmentation-loco/tree/paper-v1.0"
