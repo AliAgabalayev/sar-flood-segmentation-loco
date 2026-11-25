@@ -1,16 +1,16 @@
-# LOCO evidence audit
+# LOCO benchmark reproduction
 
 ## Recompute the released scores
 
 From the manuscript repository root, run the following with Python 3.11 or
 newer. These checks need the released confusion counts and provenance files
-under `results/a1_reconstruction`.
+under `reproducibility/benchmark-results`.
 
 ```sh
 python3 scripts/verify_loco_evidence.py
 ```
 
-The script verifies the transfer checksums, model/run identity, paired image,
+The script verifies the evidence checksums, model/run identity, paired image,
 label and valid-mask hashes, coverage, and arithmetic in the summary CSV and
 JSON. It sums flood-class counts within each event and checkpoint. IoU is
 TP/(TP+FP+FN), and F1 is 2TP/(2TP+FP+FN). All-ignored chips keep their manifest
@@ -39,7 +39,7 @@ September CSV and generated control manifests from the research workspace, which
 were separate from the tracked companion repository. It exports the logged
 metrics and run IDs without rerunning model inference.
 
-## What the audit establishes
+## Evaluation design and limitations
 
 - The released scores come from an October 2026 re-evaluation of existing
   checkpoints. The current audit independently confirms the nine paired rows from
@@ -57,7 +57,7 @@ metrics and run IDs without rerunning model inference.
   respectively. The weak pool contains 3,946 training and 438 validation chips
   and covers **12** filename groups, including the ten official hand groups plus
   Bolivia and Colombia. With an official group excluded, eleven weak groups
-  remain. The historical transfer report miscounted these weak groups.
+  remain.
 - The frozen run/weight mapping is supported by file hashes, validation callback
   values, recorded run statuses, logged stage paths and compatible step counts.
   The historical process-read manifests and initialization lineage remain

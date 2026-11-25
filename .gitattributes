@@ -1,5 +1,5 @@
 # Released digests cover the exact original bytes, including line endings.
-/results/a1_reconstruction/** -text
+/reproducibility/benchmark-results/** -text
 /reproducibility/historical-inference/** -text
 *.csv whitespace=cr-at-eol
 # This source snapshot is retained byte-for-byte, including comments and padding.

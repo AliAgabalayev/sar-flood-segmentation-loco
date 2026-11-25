@@ -33,7 +33,7 @@ def prepare(ml_root, output):
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(SNAPSHOT / name, target)
 
-    supplied = ROOT / "results/a1_reconstruction"
+    supplied = ROOT / "reproducibility/benchmark-results"
     working = output / "data/reference/a1_reconstruction"
     for name in ("selection_frozen.json", "selection_frozen.sha256", "results.json"):
         shutil.copyfile(supplied / name, working / name)

@@ -12,7 +12,7 @@ import subprocess
 from make_results import comparisons, read_rows
 
 ROOT = Path(__file__).resolve().parents[1]
-A1 = ROOT / "results/a1_reconstruction"
+BENCHMARK_RESULTS = ROOT / "reproducibility/benchmark-results"
 COUNTS = ("tp", "fp", "fn", "tn")
 MATCHED = ("valid_pixels", "image_sha256", "label_sha256", "mask_sha256")
 SEEDS = {42, 43, 44}
@@ -40,7 +40,7 @@ def pooled(counts):
 
 
 def load_counts(stem, model, event):
-    path = A1 / "counts" / (stem + ".csv")
+    path = BENCHMARK_RESULTS / "counts" / (stem + ".csv")
     chips = {}
     totals = dict.fromkeys((*COUNTS, "valid_pixels"), 0)
     for row in read_csv(path):
@@ -115,21 +115,21 @@ def main():
     parser.add_argument("--ml-root", type=Path,
                         help="Verify test IDs, local checkpoint hashes and MLflow validation records")
     args = parser.parse_args()
-    for name, expected in json.loads((A1 / "TRANSFER.json").read_text()).items():
-        require(digest(A1 / name) == expected, f"Transfer hash mismatch: {name}")
-    selection = json.loads((A1 / "selection_frozen.json").read_text())
-    summary = json.loads((A1 / "results.json").read_text())
-    require(digest(A1 / "selection_frozen.json") == summary["selection_sha256"],
+    for name, expected in json.loads((BENCHMARK_RESULTS / "checksums.json").read_text()).items():
+        require(digest(BENCHMARK_RESULTS / name) == expected, f"Evidence hash mismatch: {name}")
+    selection = json.loads((BENCHMARK_RESULTS / "selection_frozen.json").read_text())
+    summary = json.loads((BENCHMARK_RESULTS / "results.json").read_text())
+    require(digest(BENCHMARK_RESULTS / "selection_frozen.json") == summary["selection_sha256"],
             "Selection hash mismatch")
     checkpoints = {(m["event"], m["seed"]): m for m in selection["selected"]}
     pairs = {(r["event"], r["seed"]): r for r in summary["individual"]}
     require(pairs.keys() == checkpoints.keys() and
             len(pairs) == len(summary["individual"]) == len(selection["selected"]),
             "Incomplete or duplicated event/seed results")
-    tables = {(r["event"], int(r["seed"])): r for r in read_csv(A1 / "individual_seeds.csv")}
+    tables = {(r["event"], int(r["seed"])): r for r in read_csv(BENCHMARK_RESULTS / "individual_seeds.csv")}
     require(tables.keys() == pairs.keys(), "CSV result coverage differs from JSON")
     coverage = {r["event"]: r for r in summary["coverage"]}
-    releases = read_csv(A1 / "coverage.csv")
+    releases = read_csv(BENCHMARK_RESULTS / "coverage.csv")
     require(coverage.keys() == {r["event"] for r in releases} ==
             selection["manifests"].keys() == summary["generalist"].keys(),
             "Generalist coverage differs from frozen events")
@@ -221,7 +221,7 @@ def main():
     ], "Chip-deletion export differs from the per-chip source counts")
     water_labels = {
         row["chip_id"]: int(row["tp"]) + int(row["fn"])
-        for row in read_rows(A1 / "counts/Pakistan_s44.csv")
+        for row in read_rows(BENCHMARK_RESULTS / "counts/Pakistan_s44.csv")
     }
     dominant_chip = max(water_labels, key=water_labels.get)
     _, _, full, omissions = recalculated["Pakistan", 44]

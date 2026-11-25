@@ -1,10 +1,10 @@
 cff-version: 1.2.0
 message: "Please cite the manuscript when using this repository."
-title: "Sen1Floods11 Event Transfer Audit and Reproduction Package"
+title: "Interpolation vs. Generalization in SAR Water Segmentation"
 type: dataset
 version: "1.0"
 date-released: 2026-11-25
-repository-code: "https://github.com/AliAgabalayev/flood-paper/tree/paper-v1.0"
+repository-code: "https://github.com/AliAgabalayev/sar-flood-segmentation-loco/tree/paper-v1.0"
 authors: &authors
   - given-names: Ali
     family-names: Agabalazade

@@ -4,7 +4,7 @@ import csv
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-EVIDENCE = ROOT / "results/a1_reconstruction"
+EVIDENCE = ROOT / "reproducibility/benchmark-results"
 
 
 def read_rows(path):
