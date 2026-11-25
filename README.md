@@ -37,3 +37,7 @@ The [reproducibility guide](reproducibility/README.md) documents the evaluation
 inputs and replay procedures. The
 [companion ML implementation](https://github.com/AliAgabalayev/Flood-Damage-Detection/commit/23563a7bebf28e508b394cf6858649718fd148a3)
 contains the terrain-corrected upload API and offline CLI.
+
+## License
+
+The MIT License applies only to original software authored by the copyright holders, including their reproducibility scripts and build code. It does not license the manuscript (including LaTeX source and PDF), figures, tables as scholarly content, benchmark evidence or datasets, model weights, Springer LNCS template and bibliography-style files (llncs.cls and splncs04.bst), or other third-party material. Those materials retain their applicable rights and terms; no additional redistribution permission is granted for them by this license. See [LICENSE](LICENSE) for the full MIT text and scope.
